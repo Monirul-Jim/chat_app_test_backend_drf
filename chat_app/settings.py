@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -116,7 +116,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
 # Allow specific headers if necessary
 CORS_ALLOW_HEADERS = [
     'content-type',
@@ -132,7 +132,8 @@ CORS_ALLOW_METHODS = [
     'OPTIONS',
 ]
 AUTHENTICATION_BACKENDS = [
-    'path.to.EmailBackend',  # Replace with the actual path to your custom backend
+    # Replace with the actual path to your custom backend
+    'signup_login.backends.EmailBackend',
     # Keep Django's default backend if needed
     'django.contrib.auth.backends.ModelBackend',
 ]

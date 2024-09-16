@@ -81,6 +81,62 @@
         "documentation": {}
     },
     {
+        "label": "ModelBackend",
+        "importPath": "django.contrib.auth.backends",
+        "description": "django.contrib.auth.backends",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.backends",
+        "documentation": {}
+    },
+    {
+        "label": "ModelBackend",
+        "importPath": "django.contrib.auth.backends",
+        "description": "django.contrib.auth.backends",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.backends",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -145,43 +201,11 @@
         "documentation": {}
     },
     {
-        "label": "authenticate",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth",
-        "documentation": {}
-    },
-    {
-        "label": "login",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth",
-        "documentation": {}
-    },
-    {
-        "label": "logout",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth",
-        "documentation": {}
-    },
-    {
         "label": "Token",
         "importPath": "rest_framework.authtoken.models",
         "description": "rest_framework.authtoken.models",
         "isExtraImport": true,
         "detail": "rest_framework.authtoken.models",
-        "documentation": {}
-    },
-    {
-        "label": "ModelBackend",
-        "importPath": "django.contrib.auth.backends",
-        "description": "django.contrib.auth.backends",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.backends",
         "documentation": {}
     },
     {
@@ -306,7 +330,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# CORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -315,7 +339,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# CORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -324,7 +348,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# CORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -333,16 +357,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "USE_TZ = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',",
-        "detail": "chat_app.settings",
-        "documentation": {}
-    },
-    {
-        "label": "CORS_ALLOW_ALL_ORIGINS",
-        "kind": 5,
-        "importPath": "chat_app.settings",
-        "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',",
+        "peekOfCode": "USE_TZ = True\n# CORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -360,7 +375,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n    'PUT',\n    'DELETE',\n    'OPTIONS',\n]\nAUTHENTICATION_BACKENDS = [\n    'path.to.EmailBackend',  # Replace with the actual path to your custom backend\n    # Keep Django's default backend if needed",
+        "peekOfCode": "CORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n    'PUT',\n    'DELETE',\n    'OPTIONS',\n]\nAUTHENTICATION_BACKENDS = [\n    # Replace with the actual path to your custom backend\n    'signup_login.backends.EmailBackend',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -369,7 +384,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    'path.to.EmailBackend',  # Replace with the actual path to your custom backend\n    # Keep Django's default backend if needed\n    'django.contrib.auth.backends.ModelBackend',\n]\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field",
+        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    # Replace with the actual path to your custom backend\n    'signup_login.backends.EmailBackend',\n    # Keep Django's default backend if needed\n    'django.contrib.auth.backends.ModelBackend',\n]\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -419,6 +434,15 @@
         "documentation": {}
     },
     {
+        "label": "EmailBackend",
+        "kind": 6,
+        "importPath": "signup_login.backends",
+        "description": "signup_login.backends",
+        "peekOfCode": "class EmailBackend(ModelBackend):\n    def authenticate(self, request, email=None, password=None, **kwargs):\n        UserModel = get_user_model()\n        try:\n            user = UserModel.objects.get(email=email)\n            if user.check_password(password):\n                return user\n        except UserModel.DoesNotExist:\n            return None",
+        "detail": "signup_login.backends",
+        "documentation": {}
+    },
+    {
         "label": "UserRegistrationSerializers",
         "kind": 6,
         "importPath": "signup_login.serializers",
@@ -432,7 +456,7 @@
         "kind": 6,
         "importPath": "signup_login.serializers",
         "description": "signup_login.serializers",
-        "peekOfCode": "class UserLoginSerializers(serializers.Serializer):\n    email = serializers.CharField(required=True)\n    password = serializers.CharField(required=True)",
+        "peekOfCode": "class UserLoginSerializers(serializers.Serializer):\n    email = serializers.CharField(required=True)\n    password = serializers.CharField(required=True)\n    class Meta:\n        model = User\n        fields = ['email', 'password']",
         "detail": "signup_login.serializers",
         "documentation": {}
     },
@@ -459,7 +483,7 @@
         "kind": 6,
         "importPath": "signup_login.views",
         "description": "signup_login.views",
-        "peekOfCode": "class EmailBackend(ModelBackend):\n    def authenticate(self, request, email=None, password=None, **kwargs):\n        try:\n            user = User.objects.get(email=email)\n            if user.check_password(password):\n                return user\n        except User.DoesNotExist:\n            return None\nclass UserLoginApiView(APIView):\n    def post(self, request):",
+        "peekOfCode": "class EmailBackend(ModelBackend):\n    def authenticate(self, request, email=None, password=None, **kwargs):\n        UserModel = get_user_model()\n        try:\n            user = UserModel.objects.get(email=email)\n            if user.check_password(password):\n                return user\n        except UserModel.DoesNotExist:\n            return None\n# class UserLoginApiView(APIView):",
         "detail": "signup_login.views",
         "documentation": {}
     },

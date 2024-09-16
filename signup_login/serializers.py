@@ -34,6 +34,13 @@ class UserRegistrationSerializers(serializers.ModelSerializer):
         return account
 
 
+# class UserLoginSerializers(serializers.Serializer):
+#     email = serializers.CharField(required=True)
+#     password = serializers.CharField(required=True)
 class UserLoginSerializers(serializers.Serializer):
     email = serializers.CharField(required=True)
     password = serializers.CharField(required=True)
+
+    class Meta:
+        model = User
+        fields = ['email', 'password']
