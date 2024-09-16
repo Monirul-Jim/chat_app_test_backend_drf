@@ -17,11 +17,52 @@
         "documentation": {}
     },
     {
+        "label": "ProtocolTypeRouter",
+        "importPath": "channels.routing",
+        "description": "channels.routing",
+        "isExtraImport": true,
+        "detail": "channels.routing",
+        "documentation": {}
+    },
+    {
+        "label": "URLRouter",
+        "importPath": "channels.routing",
+        "description": "channels.routing",
+        "isExtraImport": true,
+        "detail": "channels.routing",
+        "documentation": {}
+    },
+    {
+        "label": "AuthMiddlewareStack",
+        "importPath": "channels.auth",
+        "description": "channels.auth",
+        "isExtraImport": true,
+        "detail": "channels.auth",
+        "documentation": {}
+    },
+    {
+        "label": "signup_login.routing",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "signup_login.routing",
+        "description": "signup_login.routing",
+        "detail": "signup_login.routing",
+        "documentation": {}
+    },
+    {
         "label": "Path",
         "importPath": "pathlib",
         "description": "pathlib",
         "isExtraImport": true,
         "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
         "documentation": {}
     },
     {
@@ -57,6 +98,14 @@
         "documentation": {}
     },
     {
+        "label": "re_path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -70,6 +119,55 @@
         "description": "django.core.wsgi",
         "isExtraImport": true,
         "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -137,11 +235,44 @@
         "documentation": {}
     },
     {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "json",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "django.db",
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncWebsocketConsumer",
+        "importPath": "channels.generic.websocket",
+        "description": "channels.generic.websocket",
+        "isExtraImport": true,
+        "detail": "channels.generic.websocket",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
         "documentation": {}
     },
     {
@@ -161,19 +292,27 @@
         "documentation": {}
     },
     {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
         "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
+        "detail": "rest_framework",
         "documentation": {}
     },
     {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
+        "label": "Message",
+        "importPath": "signup_login.models",
+        "description": "signup_login.models",
         "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
+        "detail": "signup_login.models",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "signup_login.models",
+        "description": "signup_login.models",
+        "isExtraImport": true,
+        "detail": "signup_login.models",
         "documentation": {}
     },
     {
@@ -209,6 +348,14 @@
         "documentation": {}
     },
     {
+        "label": "RefreshToken",
+        "importPath": "rest_framework_simplejwt.tokens",
+        "description": "rest_framework_simplejwt.tokens",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.tokens",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -222,7 +369,7 @@
         "kind": 5,
         "importPath": "chat_app.asgi",
         "description": "chat_app.asgi",
-        "peekOfCode": "application = get_asgi_application()",
+        "peekOfCode": "application = ProtocolTypeRouter({\n    \"http\": get_asgi_application(),\n    \"websocket\": AuthMiddlewareStack(\n        URLRouter(\n            signup_login.routing.websocket_urlpatterns\n        )\n    ),\n})",
         "detail": "chat_app.asgi",
         "documentation": {}
     },
@@ -267,7 +414,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'rest_framework.authtoken',\n    'signup_login',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'rest_framework.authtoken',\n    'rest_framework_simplejwt',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -276,7 +423,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n    'corsheaders.middleware.CorsMiddleware',\n]",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'corsheaders.middleware.CorsMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -299,11 +446,47 @@
         "documentation": {}
     },
     {
+        "label": "REST_FRAMEWORK",
+        "kind": 5,
+        "importPath": "chat_app.settings",
+        "description": "chat_app.settings",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ),\n}\n# JWT Settings\nSIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),\n    'ROTATE_REFRESH_TOKENS': True,",
+        "detail": "chat_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SIMPLE_JWT",
+        "kind": 5,
+        "importPath": "chat_app.settings",
+        "description": "chat_app.settings",
+        "peekOfCode": "SIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'UPDATE_LAST_LOGIN': False,\n    'ALGORITHM': 'HS256',\n    'SIGNING_KEY': SECRET_KEY,\n    'VERIFYING_KEY': None,\n    'AUTH_HEADER_TYPES': ('Bearer',),",
+        "detail": "chat_app.settings",
+        "documentation": {}
+    },
+    {
         "label": "WSGI_APPLICATION",
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'chat_app.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation",
+        "peekOfCode": "WSGI_APPLICATION = 'chat_app.wsgi.application'\nASGI_APPLICATION = 'chat_app.asgi.application'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels.layers.InMemoryChannelLayer',\n    }\n}\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {",
+        "detail": "chat_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ASGI_APPLICATION",
+        "kind": 5,
+        "importPath": "chat_app.settings",
+        "description": "chat_app.settings",
+        "peekOfCode": "ASGI_APPLICATION = 'chat_app.asgi.application'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels.layers.InMemoryChannelLayer',\n    }\n}\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {\n    'default': {",
+        "detail": "chat_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CHANNEL_LAYERS",
+        "kind": 5,
+        "importPath": "chat_app.settings",
+        "description": "chat_app.settings",
+        "peekOfCode": "CHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels.layers.InMemoryChannelLayer',\n    }\n}\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -330,7 +513,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# CORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Add your frontend URL here\n]\nCORS_ALLOW_CREDENTIALS = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -339,7 +522,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# CORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Add your frontend URL here\n]\nCORS_ALLOW_CREDENTIALS = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -348,7 +531,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# CORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Add your frontend URL here\n]\nCORS_ALLOW_CREDENTIALS = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -357,7 +540,34 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "USE_TZ = True\n# CORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',",
+        "peekOfCode": "USE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Add your frontend URL here\n]\nCORS_ALLOW_CREDENTIALS = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',",
+        "detail": "chat_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CORS_ALLOWED_ORIGINS",
+        "kind": 5,
+        "importPath": "chat_app.settings",
+        "description": "chat_app.settings",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Add your frontend URL here\n]\nCORS_ALLOW_CREDENTIALS = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]",
+        "detail": "chat_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CORS_ALLOW_CREDENTIALS",
+        "kind": 5,
+        "importPath": "chat_app.settings",
+        "description": "chat_app.settings",
+        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',",
+        "detail": "chat_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CORS_ALLOW_ALL_ORIGINS",
+        "kind": 5,
+        "importPath": "chat_app.settings",
+        "description": "chat_app.settings",
+        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -384,7 +594,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    # Replace with the actual path to your custom backend\n    'signup_login.backends.EmailBackend',\n    # Keep Django's default backend if needed\n    'django.contrib.auth.backends.ModelBackend',\n]\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type",
+        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    # Replace with the actual path to your custom backend\n    'signup_login.backends.EmailBackend',\n    # Keep Django's default backend if needed\n    'django.contrib.auth.backends.ModelBackend',\n]\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.1/howto/static-files/\nSTATIC_URL = 'static/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -393,7 +603,16 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = 'static/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "chat_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "chat_app.settings",
+        "description": "chat_app.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -425,6 +644,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "signup_login.migrations.0001_initial",
+        "description": "signup_login.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='ChatRoom',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "signup_login.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
         "label": "SignupLoginConfig",
         "kind": 6,
         "importPath": "signup_login.apps",
@@ -443,6 +671,42 @@
         "documentation": {}
     },
     {
+        "label": "ChatConsumer",
+        "kind": 6,
+        "importPath": "signup_login.consumers",
+        "description": "signup_login.consumers",
+        "peekOfCode": "class ChatConsumer(AsyncWebsocketConsumer):\n    async def connect(self):\n        self.room_name = self.scope['url_route']['kwargs']['room_name']\n        self.room_group_name = f'chat_{self.room_name}'\n        # Join room group\n        await self.channel_layer.group_add(self.room_group_name, self.channel_name)\n        await self.accept()\n    async def disconnect(self, close_code):\n        # Leave room group\n        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)",
+        "detail": "signup_login.consumers",
+        "documentation": {}
+    },
+    {
+        "label": "ChatRoom",
+        "kind": 6,
+        "importPath": "signup_login.models",
+        "description": "signup_login.models",
+        "peekOfCode": "class ChatRoom(models.Model):\n    name = models.CharField(max_length=100)\n    participants = models.ManyToManyField(User, related_name=\"chat_rooms\")\n    def __str__(self):\n        return self.name\nclass Message(models.Model):\n    room = models.ForeignKey(\n        ChatRoom, on_delete=models.CASCADE, related_name='messages')\n    sender = models.ForeignKey(User, on_delete=models.CASCADE)\n    content = models.TextField(blank=True, null=True)",
+        "detail": "signup_login.models",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "kind": 6,
+        "importPath": "signup_login.models",
+        "description": "signup_login.models",
+        "peekOfCode": "class Message(models.Model):\n    room = models.ForeignKey(\n        ChatRoom, on_delete=models.CASCADE, related_name='messages')\n    sender = models.ForeignKey(User, on_delete=models.CASCADE)\n    content = models.TextField(blank=True, null=True)\n    timestamp = models.DateTimeField(auto_now_add=True)\n    # File uploads\n    image = models.ImageField(upload_to='images/', blank=True, null=True)\n    document = models.FileField(upload_to='documents/', blank=True, null=True)\n    video = models.FileField(upload_to='videos/', blank=True, null=True)",
+        "detail": "signup_login.models",
+        "documentation": {}
+    },
+    {
+        "label": "websocket_urlpatterns",
+        "kind": 5,
+        "importPath": "signup_login.routing",
+        "description": "signup_login.routing",
+        "peekOfCode": "websocket_urlpatterns = [\n    re_path(r'ws/chat/(?P<room_name>\\w+)/$', consumers.ChatConsumer.as_asgi()),\n]",
+        "detail": "signup_login.routing",
+        "documentation": {}
+    },
+    {
         "label": "UserRegistrationSerializers",
         "kind": 6,
         "importPath": "signup_login.serializers",
@@ -456,7 +720,16 @@
         "kind": 6,
         "importPath": "signup_login.serializers",
         "description": "signup_login.serializers",
-        "peekOfCode": "class UserLoginSerializers(serializers.Serializer):\n    email = serializers.CharField(required=True)\n    password = serializers.CharField(required=True)\n    class Meta:\n        model = User\n        fields = ['email', 'password']",
+        "peekOfCode": "class UserLoginSerializers(serializers.Serializer):\n    email = serializers.CharField(required=True)\n    password = serializers.CharField(required=True)\n    class Meta:\n        model = User\n        fields = ['email', 'password']\nclass MessageSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Message\n        fields = ['id', 'room', 'sender', 'content', 'image',",
+        "detail": "signup_login.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "MessageSerializer",
+        "kind": 6,
+        "importPath": "signup_login.serializers",
+        "description": "signup_login.serializers",
+        "peekOfCode": "class MessageSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Message\n        fields = ['id', 'room', 'sender', 'content', 'image',\n                  'document', 'video', 'audio', 'timestamp']",
         "detail": "signup_login.serializers",
         "documentation": {}
     },
@@ -492,7 +765,16 @@
         "kind": 6,
         "importPath": "signup_login.views",
         "description": "signup_login.views",
-        "peekOfCode": "class UserLoginApiView(APIView):\n    def post(self, request):\n        serializer = UserLoginSerializers(data=request.data)\n        if serializer.is_valid():\n            email = serializer.validated_data['email']\n            password = serializer.validated_data['password']\n            user = authenticate(request, email=email, password=password)\n            if user:\n                token, _ = Token.objects.get_or_create(user=user)\n                login(request, user)",
+        "peekOfCode": "class UserLoginApiView(APIView):\n    def post(self, request):\n        serializer = UserLoginSerializers(data=request.data)\n        if serializer.is_valid():\n            email = serializer.validated_data['email']\n            password = serializer.validated_data['password']\n            user = authenticate(request, email=email, password=password)\n            if user:\n                token, _ = Token.objects.get_or_create(user=user)\n                refresh = RefreshToken.for_user(user)",
+        "detail": "signup_login.views",
+        "documentation": {}
+    },
+    {
+        "label": "MessageViewSet",
+        "kind": 6,
+        "importPath": "signup_login.views",
+        "description": "signup_login.views",
+        "peekOfCode": "class MessageViewSet(viewsets.ModelViewSet):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer",
         "detail": "signup_login.views",
         "documentation": {}
     },

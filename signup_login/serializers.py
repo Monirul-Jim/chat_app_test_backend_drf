@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
+from signup_login.models import Message
 
 
 class UserRegistrationSerializers(serializers.ModelSerializer):
@@ -44,3 +45,10 @@ class UserLoginSerializers(serializers.Serializer):
     class Meta:
         model = User
         fields = ['email', 'password']
+
+
+class MessageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Message
+        fields = ['id', 'room', 'sender', 'content', 'image',
+                  'document', 'video', 'audio', 'timestamp']
