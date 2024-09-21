@@ -10,8 +10,6 @@ from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.tokens import RefreshToken
 
-# Create your views here.
-
 
 class UserRegistrationView(APIView):
     def post(self, request):
@@ -91,6 +89,40 @@ class EmailBackend(ModelBackend):
 #                 return Response({'error': 'Invalid Credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 
 #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+# class UserLoginApiView(APIView):
+#     def post(self, request):
+#         serializer = UserLoginSerializers(data=request.data)
+#         if serializer.is_valid():
+#             email = serializer.validated_data['email']
+#             password = serializer.validated_data['password']
+#             user = authenticate(request, email=email, password=password)
+#             if user:
+#                 token, _ = Token.objects.get_or_create(user=user)
+#                 refresh = RefreshToken.for_user(user)
+#                 login(request, user)
+#                 return Response({
+#                     'message': 'User logged in successfully',
+#                     'refresh': str(refresh),
+#                     'access': str(refresh.access_token),
+#                     'user_id': user.id
+#                 }, status=status.HTTP_200_OK)
+#                 # return Response({
+#                 #     'message': 'User logged in successfully',
+#                 #     'token': token.key,
+#                 #     'user_id': user.id
+#                 # }, status=status.HTTP_200_OK)
+#                 # refresh = RefreshToken.for_user(user)
+#                 # return {
+#                 #     'refresh': str(refresh),
+#                 #     'access': str(refresh.access_token)
+#                 # }
+
+#             else:
+#                 return Response({'error': 'Invalid Credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 class UserLoginApiView(APIView):
     def post(self, request):
         serializer = UserLoginSerializers(data=request.data)
@@ -102,23 +134,23 @@ class UserLoginApiView(APIView):
                 token, _ = Token.objects.get_or_create(user=user)
                 refresh = RefreshToken.for_user(user)
                 login(request, user)
-                return Response({
+
+                response = Response({
                     'message': 'User logged in successfully',
-                    'refresh': str(refresh),
                     'access': str(refresh.access_token),
                     'user_id': user.id
                 }, status=status.HTTP_200_OK)
-                # return Response({
-                #     'message': 'User logged in successfully',
-                #     'token': token.key,
-                #     'user_id': user.id
-                # }, status=status.HTTP_200_OK)
-                # refresh = RefreshToken.for_user(user)
-                # return {
-                #     'refresh': str(refresh),
-                #     'access': str(refresh.access_token)
-                # }
 
+                response.set_cookie(
+                    'refresh_token',
+                    str(refresh),
+                    httponly=True,
+                    secure=False,
+                    samesite='Strict',
+                    path='/'
+                )
+
+                return response
             else:
                 return Response({'error': 'Invalid Credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 

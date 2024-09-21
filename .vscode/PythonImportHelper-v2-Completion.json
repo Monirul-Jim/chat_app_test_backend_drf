@@ -41,12 +41,11 @@
         "documentation": {}
     },
     {
-        "label": "signup_login.routing",
-        "kind": 6,
+        "label": "routing",
+        "importPath": "signup_login",
+        "description": "signup_login",
         "isExtraImport": true,
-        "importPath": "signup_login.routing",
-        "description": "signup_login.routing",
-        "detail": "signup_login.routing",
+        "detail": "signup_login",
         "documentation": {}
     },
     {
@@ -111,6 +110,14 @@
         "description": "django.urls",
         "isExtraImport": true,
         "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
         "documentation": {}
     },
     {
@@ -244,11 +251,19 @@
         "documentation": {}
     },
     {
-        "label": "AsyncWebsocketConsumer",
+        "label": "WebsocketConsumer",
         "importPath": "channels.generic.websocket",
         "description": "channels.generic.websocket",
         "isExtraImport": true,
         "detail": "channels.generic.websocket",
+        "documentation": {}
+    },
+    {
+        "label": "async_to_sync",
+        "importPath": "asgiref.sync",
+        "description": "asgiref.sync",
+        "isExtraImport": true,
+        "detail": "asgiref.sync",
         "documentation": {}
     },
     {
@@ -316,11 +331,27 @@
         "documentation": {}
     },
     {
+        "label": "TokenObtainPairSerializer",
+        "importPath": "rest_framework_simplejwt.serializers",
+        "description": "rest_framework_simplejwt.serializers",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.serializers",
+        "documentation": {}
+    },
+    {
         "label": "TestCase",
         "importPath": "django.test",
         "description": "django.test",
         "isExtraImport": true,
         "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TokenRefreshView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
         "documentation": {}
     },
     {
@@ -369,7 +400,7 @@
         "kind": 5,
         "importPath": "chat_app.asgi",
         "description": "chat_app.asgi",
-        "peekOfCode": "application = ProtocolTypeRouter({\n    \"http\": get_asgi_application(),\n    \"websocket\": AuthMiddlewareStack(\n        URLRouter(\n            signup_login.routing.websocket_urlpatterns\n        )\n    ),\n})",
+        "peekOfCode": "application = ProtocolTypeRouter({\n    \"http\": get_asgi_application(),\n    \"websocket\": AuthMiddlewareStack(\n        URLRouter(\n            routing.websocket_urlpatterns\n        )\n    ),\n})",
         "detail": "chat_app.asgi",
         "documentation": {}
     },
@@ -387,7 +418,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-nh(3=gn)5&^z2y+=m64l-lra&*2f9hylbxm$a51_ykhe*&e4k^'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-nh(3=gn)5&^z2y+=m64l-lra&*2f9hylbxm$a51_ykhe*&e4k^'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'channels',\n    'daphne',\n    'django.contrib.admin',\n    'django.contrib.auth',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -396,7 +427,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'channels',\n    'daphne',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -405,7 +436,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'channels',\n    'daphne',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -414,7 +445,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'rest_framework.authtoken',\n    'rest_framework_simplejwt',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'channels',\n    'daphne',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -432,7 +463,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "ROOT_URLCONF = 'chat_app.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "peekOfCode": "ROOT_URLCONF = 'chat_app.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': ['templates',],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -441,7 +472,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': ['templates',],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -459,16 +490,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "SIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'UPDATE_LAST_LOGIN': False,\n    'ALGORITHM': 'HS256',\n    'SIGNING_KEY': SECRET_KEY,\n    'VERIFYING_KEY': None,\n    'AUTH_HEADER_TYPES': ('Bearer',),",
-        "detail": "chat_app.settings",
-        "documentation": {}
-    },
-    {
-        "label": "WSGI_APPLICATION",
-        "kind": 5,
-        "importPath": "chat_app.settings",
-        "description": "chat_app.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'chat_app.wsgi.application'\nASGI_APPLICATION = 'chat_app.asgi.application'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels.layers.InMemoryChannelLayer',\n    }\n}\n# Database\n# https://docs.djangoproject.com/en/5.1/ref/settings/#databases\nDATABASES = {",
+        "peekOfCode": "SIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'UPDATE_LAST_LOGIN': True,\n    'ALGORITHM': 'HS256',\n    'SIGNING_KEY': SECRET_KEY,\n    'VERIFYING_KEY': None,\n    'AUTH_HEADER_TYPES': ('Bearer',),",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -630,8 +652,17 @@
         "kind": 5,
         "importPath": "chat_app.urls",
         "description": "chat_app.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('user-sign-in-signup/', include('signup_login.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', views.home, name='home'),\n    path('user-sign-in-signup/', include('signup_login.urls')),\n]",
         "detail": "chat_app.urls",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "chat_app.views",
+        "description": "chat_app.views",
+        "peekOfCode": "def home(request):\n    return render(request, 'home.html')",
+        "detail": "chat_app.views",
         "documentation": {}
     },
     {
@@ -675,7 +706,7 @@
         "kind": 6,
         "importPath": "signup_login.consumers",
         "description": "signup_login.consumers",
-        "peekOfCode": "class ChatConsumer(AsyncWebsocketConsumer):\n    async def connect(self):\n        self.room_name = self.scope['url_route']['kwargs']['room_name']\n        self.room_group_name = f'chat_{self.room_name}'\n        # Join room group\n        await self.channel_layer.group_add(self.room_group_name, self.channel_name)\n        await self.accept()\n    async def disconnect(self, close_code):\n        # Leave room group\n        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)",
+        "peekOfCode": "class ChatConsumer(WebsocketConsumer):\n    def connect(self):\n        self.room_group_name = 'test'\n        async_to_sync(self.channel_layer.group_add)(\n            self.room_group_name,\n            self.channel_name\n        )\n        self.accept()\n    def receive(self, text_data):\n        text_data_json = json.loads(text_data)",
         "detail": "signup_login.consumers",
         "documentation": {}
     },
@@ -702,7 +733,7 @@
         "kind": 5,
         "importPath": "signup_login.routing",
         "description": "signup_login.routing",
-        "peekOfCode": "websocket_urlpatterns = [\n    re_path(r'ws/chat/(?P<room_name>\\w+)/$', consumers.ChatConsumer.as_asgi()),\n]",
+        "peekOfCode": "websocket_urlpatterns = [\n    re_path(r'ws/socket-server/', consumers.ChatConsumer.as_asgi()),\n]",
         "detail": "signup_login.routing",
         "documentation": {}
     },
@@ -712,6 +743,15 @@
         "importPath": "signup_login.serializers",
         "description": "signup_login.serializers",
         "peekOfCode": "class UserRegistrationSerializers(serializers.ModelSerializer):\n    confirm_password = serializers.CharField(required=True)\n    class Meta:\n        model = User\n        fields = ['username', 'first_name', 'last_name',\n                  'email', 'password', 'confirm_password']\n    def save(self):\n        username = self.validated_data['username']\n        first_name = self.validated_data['first_name']\n        last_name = self.validated_data['last_name']",
+        "detail": "signup_login.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "CustomTokenObtainPairSerializer",
+        "kind": 6,
+        "importPath": "signup_login.serializers",
+        "description": "signup_login.serializers",
+        "peekOfCode": "class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):\n    @classmethod\n    def get_token(cls, user):\n        token = super().get_token(user)\n        # Add custom claims\n        token['user_id'] = user.id\n        token['username'] = user.username\n        return token\nclass UserLoginSerializers(serializers.Serializer):\n    email = serializers.CharField(required=True)",
         "detail": "signup_login.serializers",
         "documentation": {}
     },
@@ -738,7 +778,7 @@
         "kind": 5,
         "importPath": "signup_login.urls",
         "description": "signup_login.urls",
-        "peekOfCode": "urlpatterns = [\n    path('register/', UserRegistrationView.as_view(), name='user_register'),\n    path('login/', UserLoginApiView.as_view(), name='user_login'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('register/', UserRegistrationView.as_view(), name='user_register'),\n    path('login/', UserLoginApiView.as_view(), name='user_login'),\n    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),\n]",
         "detail": "signup_login.urls",
         "documentation": {}
     },
