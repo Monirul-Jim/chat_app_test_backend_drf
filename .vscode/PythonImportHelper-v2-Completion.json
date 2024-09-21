@@ -347,6 +347,22 @@
         "documentation": {}
     },
     {
+        "label": "RefreshToken",
+        "importPath": "rest_framework_simplejwt.tokens",
+        "description": "rest_framework_simplejwt.tokens",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.tokens",
+        "documentation": {}
+    },
+    {
+        "label": "RefreshToken",
+        "importPath": "rest_framework_simplejwt.tokens",
+        "description": "rest_framework_simplejwt.tokens",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.tokens",
+        "documentation": {}
+    },
+    {
         "label": "Response",
         "importPath": "rest_framework.response",
         "description": "rest_framework.response",
@@ -368,14 +384,6 @@
         "description": "rest_framework.authtoken.models",
         "isExtraImport": true,
         "detail": "rest_framework.authtoken.models",
-        "documentation": {}
-    },
-    {
-        "label": "RefreshToken",
-        "importPath": "rest_framework_simplejwt.tokens",
-        "description": "rest_framework_simplejwt.tokens",
-        "isExtraImport": true,
-        "detail": "rest_framework_simplejwt.tokens",
         "documentation": {}
     },
     {
@@ -527,7 +535,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Add your frontend URL here\n]\nCORS_ALLOW_CREDENTIALS = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Your frontend origin\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -536,7 +544,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Add your frontend URL here\n]\nCORS_ALLOW_CREDENTIALS = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Your frontend origin\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -545,7 +553,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Add your frontend URL here\n]\nCORS_ALLOW_CREDENTIALS = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Your frontend origin\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -554,7 +562,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "USE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Add your frontend URL here\n]\nCORS_ALLOW_CREDENTIALS = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',",
+        "peekOfCode": "USE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Your frontend origin\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -563,7 +571,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Add your frontend URL here\n]\nCORS_ALLOW_CREDENTIALS = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Your frontend origin\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -572,16 +580,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True\nCORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',",
-        "detail": "chat_app.settings",
-        "documentation": {}
-    },
-    {
-        "label": "CORS_ALLOW_ALL_ORIGINS",
-        "kind": 5,
-        "importPath": "chat_app.settings",
-        "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',",
+        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -590,7 +589,16 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n    'PUT',\n    'DELETE',",
+        "peekOfCode": "CORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n    'PUT',",
+        "detail": "chat_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CSRF_TRUSTED_ORIGINS",
+        "kind": 5,
+        "importPath": "chat_app.settings",
+        "description": "chat_app.settings",
+        "peekOfCode": "CSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n    'PUT',\n    'DELETE',\n    'OPTIONS',\n]\nAUTHENTICATION_BACKENDS = [",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -734,7 +742,7 @@
         "kind": 6,
         "importPath": "signup_login.serializers",
         "description": "signup_login.serializers",
-        "peekOfCode": "class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):\n    @classmethod\n    def get_token(cls, user):\n        token = super().get_token(user)\n        # Add custom claims\n        token['user_id'] = user.id\n        token['username'] = user.username\n        return token\nclass UserLoginSerializers(serializers.Serializer):\n    email = serializers.CharField(required=True)",
+        "peekOfCode": "class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):\n    @classmethod\n    def get_token(cls, user):\n        token = super().get_token(user)\n        # Add custom claims\n        token['user_id'] = user.id\n        return token\nclass UserLoginSerializers(serializers.Serializer):\n    email = serializers.CharField(required=True)\n    password = serializers.CharField(required=True)",
         "detail": "signup_login.serializers",
         "documentation": {}
     },
@@ -766,6 +774,15 @@
         "documentation": {}
     },
     {
+        "label": "get_tokens_for_user",
+        "kind": 2,
+        "importPath": "signup_login.utils",
+        "description": "signup_login.utils",
+        "peekOfCode": "def get_tokens_for_user(user):\n    refresh = RefreshToken.for_user(user)\n    return {\n        'refresh': str(refresh),\n        'access': str(refresh.access_token),\n    }",
+        "detail": "signup_login.utils",
+        "documentation": {}
+    },
+    {
         "label": "UserRegistrationView",
         "kind": 6,
         "importPath": "signup_login.views",
@@ -779,7 +796,7 @@
         "kind": 6,
         "importPath": "signup_login.views",
         "description": "signup_login.views",
-        "peekOfCode": "class EmailBackend(ModelBackend):\n    def authenticate(self, request, email=None, password=None, **kwargs):\n        UserModel = get_user_model()\n        try:\n            user = UserModel.objects.get(email=email)\n            if user.check_password(password):\n                return user\n        except UserModel.DoesNotExist:\n            return None\n# class UserLoginApiView(APIView):",
+        "peekOfCode": "class EmailBackend(ModelBackend):\n    def authenticate(self, request, email=None, password=None, **kwargs):\n        UserModel = get_user_model()\n        try:\n            user = UserModel.objects.get(email=email)\n            if user.check_password(password):\n                return user\n        except UserModel.DoesNotExist:\n            return None\nclass UserLoginApiView(APIView):",
         "detail": "signup_login.views",
         "documentation": {}
     },

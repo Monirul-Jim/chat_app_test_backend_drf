@@ -145,15 +145,15 @@ USE_I18N = True
 
 USE_TZ = True
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # Add your frontend URL here
+    "http://localhost:5173",  # Your frontend origin
 ]
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_ALL_ORIGINS = True
 # Allow specific headers if necessary
 CORS_ALLOW_HEADERS = [
     'content-type',
     'authorization',
 ]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:5173"]
 
 # Allow specific HTTP methods if necessary
 CORS_ALLOW_METHODS = [
