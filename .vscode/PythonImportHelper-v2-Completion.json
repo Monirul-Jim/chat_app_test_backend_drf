@@ -347,22 +347,6 @@
         "documentation": {}
     },
     {
-        "label": "RefreshToken",
-        "importPath": "rest_framework_simplejwt.tokens",
-        "description": "rest_framework_simplejwt.tokens",
-        "isExtraImport": true,
-        "detail": "rest_framework_simplejwt.tokens",
-        "documentation": {}
-    },
-    {
-        "label": "RefreshToken",
-        "importPath": "rest_framework_simplejwt.tokens",
-        "description": "rest_framework_simplejwt.tokens",
-        "isExtraImport": true,
-        "detail": "rest_framework_simplejwt.tokens",
-        "documentation": {}
-    },
-    {
         "label": "Response",
         "importPath": "rest_framework.response",
         "description": "rest_framework.response",
@@ -379,11 +363,11 @@
         "documentation": {}
     },
     {
-        "label": "Token",
-        "importPath": "rest_framework.authtoken.models",
-        "description": "rest_framework.authtoken.models",
+        "label": "RefreshToken",
+        "importPath": "rest_framework_simplejwt.tokens",
+        "description": "rest_framework_simplejwt.tokens",
         "isExtraImport": true,
-        "detail": "rest_framework.authtoken.models",
+        "detail": "rest_framework_simplejwt.tokens",
         "documentation": {}
     },
     {
@@ -481,7 +465,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ),\n}\n# JWT Settings\nSIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),\n    'ROTATE_REFRESH_TOKENS': True,",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ),\n}\n# JWT Settings\nSIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),\n    'ROTATE_REFRESH_TOKENS': True,",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -490,7 +474,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "SIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'UPDATE_LAST_LOGIN': True,\n    'ALGORITHM': 'HS256',\n    'SIGNING_KEY': SECRET_KEY,\n    'VERIFYING_KEY': None,\n    'AUTH_HEADER_TYPES': ('Bearer',),",
+        "peekOfCode": "SIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_COOKIE': 'refresh_token',\n    'AUTH_COOKIE_PATH': '/',  # Ensures the cookie is sent for all requests\n    # Protect refresh token from being accessed by JavaScript\n    'AUTH_COOKIE_HTTP_ONLY': True,\n    # Cross-site requests allowed (adjust if needed)",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -562,7 +546,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "USE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Your frontend origin\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]",
+        "peekOfCode": "USE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Your frontend origin\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -571,7 +555,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Your frontend origin\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Your frontend origin\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n]",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -580,7 +564,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',",
+        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -589,7 +573,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n    'PUT',",
+        "peekOfCode": "CORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -652,7 +636,7 @@
         "kind": 5,
         "importPath": "chat_app.urls",
         "description": "chat_app.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('user-sign-in-signup/', include('signup_login.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('user/', include('signup_login.urls')),\n]",
         "detail": "chat_app.urls",
         "documentation": {}
     },
@@ -774,20 +758,11 @@
         "documentation": {}
     },
     {
-        "label": "get_tokens_for_user",
-        "kind": 2,
-        "importPath": "signup_login.utils",
-        "description": "signup_login.utils",
-        "peekOfCode": "def get_tokens_for_user(user):\n    refresh = RefreshToken.for_user(user)\n    return {\n        'refresh': str(refresh),\n        'access': str(refresh.access_token),\n    }",
-        "detail": "signup_login.utils",
-        "documentation": {}
-    },
-    {
         "label": "UserRegistrationView",
         "kind": 6,
         "importPath": "signup_login.views",
         "description": "signup_login.views",
-        "peekOfCode": "class UserRegistrationView(APIView):\n    def post(self, request):\n        serializer = UserRegistrationSerializers(data=request.data)\n        if serializer.is_valid():\n            serializer.save()\n            return Response({'message': 'User registered successfully'}, status=status.HTTP_201_CREATED)\n        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)\n# class UserLoginApiView(APIView):\n#     def post(self, request):\n#         serializer = UserLoginSerializers(data=self.request.data)",
+        "peekOfCode": "class UserRegistrationView(APIView):\n    def post(self, request):\n        serializer = UserRegistrationSerializers(data=request.data)\n        if serializer.is_valid():\n            serializer.save()\n            return Response({'message': 'User registered successfully'}, status=status.HTTP_201_CREATED)\n        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)\nclass EmailBackend(ModelBackend):\n    def authenticate(self, request, email=None, password=None, **kwargs):\n        UserModel = get_user_model()",
         "detail": "signup_login.views",
         "documentation": {}
     },
@@ -805,7 +780,7 @@
         "kind": 6,
         "importPath": "signup_login.views",
         "description": "signup_login.views",
-        "peekOfCode": "class UserLoginApiView(APIView):\n    def post(self, request):\n        serializer = UserLoginSerializers(data=request.data)\n        if serializer.is_valid():\n            email = serializer.validated_data['email']\n            password = serializer.validated_data['password']\n            user = authenticate(request, email=email, password=password)\n            if user:\n                token, _ = Token.objects.get_or_create(user=user)\n                refresh = RefreshToken.for_user(user)",
+        "peekOfCode": "class UserLoginApiView(APIView):\n    def post(self, request):\n        serializer = UserLoginSerializers(data=request.data)\n        if serializer.is_valid():\n            email = serializer.validated_data['email']\n            password = serializer.validated_data['password']\n            user = authenticate(request, email=email, password=password)\n            if user:\n                refresh = RefreshToken.for_user(user)\n                # Login user session",
         "detail": "signup_login.views",
         "documentation": {}
     },

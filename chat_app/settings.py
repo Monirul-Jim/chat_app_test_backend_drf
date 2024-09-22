@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework.authtoken',
+    # 'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'signup_login',
@@ -85,18 +85,22 @@ REST_FRAMEWORK = {
 # JWT Settings
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
-    'UPDATE_LAST_LOGIN': True,
-    'ALGORITHM': 'HS256',
+    'AUTH_COOKIE': 'refresh_token',
+    'AUTH_COOKIE_PATH': '/',  # Ensures the cookie is sent for all requests
+    # Protect refresh token from being accessed by JavaScript
+    'AUTH_COOKIE_HTTP_ONLY': True,
+    # Cross-site requests allowed (adjust if needed)
+    'AUTH_COOKIE_SAMESITE': 'None',
+    'AUTH_COOKIE_SECURE': False,  # Set True in production (use HTTPS)
     'SIGNING_KEY': SECRET_KEY,
-    'VERIFYING_KEY': None,
     'AUTH_HEADER_TYPES': ('Bearer',),
-    'USER_ID_FIELD': 'id',
     'USER_ID_CLAIM': 'user_id',
     'TOKEN_OBTAIN_SERIALIZER': 'signup_login.serializers.to.CustomTokenObtainPairSerializer',
 }
+
 # WSGI_APPLICATION = 'chat_app.wsgi.application'
 ASGI_APPLICATION = 'chat_app.asgi.application'
 CHANNEL_LAYERS = {
@@ -152,7 +156,9 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = [
     'content-type',
     'authorization',
+    'x-csrftoken',  # Ensure CSRF header is allowed
 ]
+
 CSRF_TRUSTED_ORIGINS = ["http://localhost:5173"]
 
 # Allow specific HTTP methods if necessary
