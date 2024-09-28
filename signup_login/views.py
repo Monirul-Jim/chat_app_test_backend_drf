@@ -38,7 +38,7 @@ class UserLoginApiView(APIView):
             email = serializer.validated_data['email']
             password = serializer.validated_data['password']
             user = authenticate(request, email=email, password=password)
-            if user:
+            if user is not None:
                 refresh = RefreshToken.for_user(user)
 
                 # Login user session
@@ -56,44 +56,14 @@ class UserLoginApiView(APIView):
                 response.set_cookie(
                     'refresh', str(refresh),
                     httponly=True,
-                    secure=False,
-                    samesite=None,
+                    # secure=False,
+                    # samesite='None',
+                    # samesite=None,
                 )
                 return response
             else:
                 return Response({'error': 'Invalid Credentials'}, status=status.HTTP_401_UNAUTHORIZED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-# class UserLoginApiView(APIView):
-#     def post(self, request):
-#         serializer = UserLoginSerializers(data=request.data)
-#         if serializer.is_valid():
-#             email = serializer.validated_data['email']
-#             password = serializer.validated_data['password']
-#             user = authenticate(request, email=email, password=password)
-#             if user:
-#                 # Use the function to get tokens
-#                 tokens = get_tokens_for_user(user)
-#                 response = Response({
-#                     'message': 'User logged in successfully',
-#                     'access': tokens['access'],
-#                     'refresh': tokens['refresh'],
-#                     'user_id': user.id
-#                 }, status=status.HTTP_200_OK)
-
-#                 response.set_cookie(
-#                     'refresh',
-#                     tokens['refresh'],
-#                     httponly=True,
-#                     secure=False,  # Set to True in production with HTTPS
-#                     samesite='Lax',
-#                 )
-
-#                 return response
-#             else:
-#                 return Response({'error': 'Invalid Credentials'}, status=status.HTTP_401_UNAUTHORIZED)
-
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class MessageViewSet(viewsets.ModelViewSet):

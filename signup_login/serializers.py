@@ -41,14 +41,14 @@ class UserRegistrationSerializers(serializers.ModelSerializer):
 #     password = serializers.CharField(required=True)
 
 
-class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
-    @classmethod
-    def get_token(cls, user):
-        token = super().get_token(user)
-        # Add custom claims
-        token['user_id'] = user.id
+# class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+#     @classmethod
+#     def get_token(cls, user):
+#         token = super().get_token(user)
+#         # Add custom claims
+#         token['user_id'] = user.id
 
-        return token
+#         return token
 
 
 class UserLoginSerializers(serializers.Serializer):

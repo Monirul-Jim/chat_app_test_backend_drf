@@ -465,16 +465,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ),\n}\n# JWT Settings\nSIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),\n    'ROTATE_REFRESH_TOKENS': True,",
-        "detail": "chat_app.settings",
-        "documentation": {}
-    },
-    {
-        "label": "SIMPLE_JWT",
-        "kind": 5,
-        "importPath": "chat_app.settings",
-        "description": "chat_app.settings",
-        "peekOfCode": "SIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_COOKIE': 'refresh_token',\n    'AUTH_COOKIE_PATH': '/',  # Ensures the cookie is sent for all requests\n    # Protect refresh token from being accessed by JavaScript\n    'AUTH_COOKIE_HTTP_ONLY': True,\n    # Cross-site requests allowed (adjust if needed)",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ),\n}\n# WSGI_APPLICATION = 'chat_app.wsgi.application'\nASGI_APPLICATION = 'chat_app.asgi.application'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels.layers.InMemoryChannelLayer',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -519,7 +510,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Your frontend origin\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -528,7 +519,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Your frontend origin\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_COOKIE': 'refresh_token',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -537,7 +528,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Your frontend origin\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_COOKIE': 'refresh_token',\n    'AUTH_COOKIE_PATH': '/',  # Ensures the cookie is sent for all requests",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -546,7 +537,16 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "USE_TZ = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Your frontend origin\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed",
+        "peekOfCode": "USE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_COOKIE': 'refresh_token',\n    'AUTH_COOKIE_PATH': '/',  # Ensures the cookie is sent for all requests\n    # Protect refresh token from being accessed by JavaScript",
+        "detail": "chat_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SIMPLE_JWT",
+        "kind": 5,
+        "importPath": "chat_app.settings",
+        "description": "chat_app.settings",
+        "peekOfCode": "SIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_COOKIE': 'refresh_token',\n    'AUTH_COOKIE_PATH': '/',  # Ensures the cookie is sent for all requests\n    # Protect refresh token from being accessed by JavaScript\n    'AUTH_COOKIE_HTTP_ONLY': True,\n    # Cross-site requests allowed (adjust if needed)",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -555,7 +555,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",  # Your frontend origin\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n]",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n    'refresh'",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -564,7 +564,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [",
+        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n    'refresh'\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]\n# Allow specific HTTP methods if necessary",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -573,7 +573,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',",
+        "peekOfCode": "CORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n    'refresh'\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -722,15 +722,6 @@
         "documentation": {}
     },
     {
-        "label": "CustomTokenObtainPairSerializer",
-        "kind": 6,
-        "importPath": "signup_login.serializers",
-        "description": "signup_login.serializers",
-        "peekOfCode": "class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):\n    @classmethod\n    def get_token(cls, user):\n        token = super().get_token(user)\n        # Add custom claims\n        token['user_id'] = user.id\n        return token\nclass UserLoginSerializers(serializers.Serializer):\n    email = serializers.CharField(required=True)\n    password = serializers.CharField(required=True)",
-        "detail": "signup_login.serializers",
-        "documentation": {}
-    },
-    {
         "label": "UserLoginSerializers",
         "kind": 6,
         "importPath": "signup_login.serializers",
@@ -780,7 +771,7 @@
         "kind": 6,
         "importPath": "signup_login.views",
         "description": "signup_login.views",
-        "peekOfCode": "class UserLoginApiView(APIView):\n    def post(self, request):\n        serializer = UserLoginSerializers(data=request.data)\n        if serializer.is_valid():\n            email = serializer.validated_data['email']\n            password = serializer.validated_data['password']\n            user = authenticate(request, email=email, password=password)\n            if user:\n                refresh = RefreshToken.for_user(user)\n                # Login user session",
+        "peekOfCode": "class UserLoginApiView(APIView):\n    def post(self, request):\n        serializer = UserLoginSerializers(data=request.data)\n        if serializer.is_valid():\n            email = serializer.validated_data['email']\n            password = serializer.validated_data['password']\n            user = authenticate(request, email=email, password=password)\n            if user is not None:\n                refresh = RefreshToken.for_user(user)\n                # Login user session",
         "detail": "signup_login.views",
         "documentation": {}
     },
