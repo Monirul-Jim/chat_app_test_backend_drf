@@ -210,6 +210,14 @@
         "documentation": {}
     },
     {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "ChatMessage",
         "importPath": "signup_login.models",
         "description": "signup_login.models",
@@ -307,6 +315,22 @@
         "documentation": {}
     },
     {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
         "label": "serializers",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -400,6 +424,22 @@
         "description": "rest_framework_simplejwt.tokens",
         "isExtraImport": true,
         "detail": "rest_framework_simplejwt.tokens",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "django.contrib.sessions.models",
+        "description": "django.contrib.sessions.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.sessions.models",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
         "documentation": {}
     },
     {
@@ -794,7 +834,7 @@
         "kind": 5,
         "importPath": "signup_login.urls",
         "description": "signup_login.urls",
-        "peekOfCode": "urlpatterns = [\n    path('register/', UserRegistrationView.as_view(), name='user_register'),\n    path('login/', UserLoginApiView.as_view(), name='user_login'),\n    path('refresh/', TokenRefreshView.as_view(), name='token_refresh')\n]",
+        "peekOfCode": "urlpatterns = [\n    path('register/', UserRegistrationView.as_view(), name='user_register'),\n    path('login/', UserLoginApiView.as_view(), name='user_login'),\n    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),\n    path('logged-in-users/', get_registered_and_logged_in_users,\n         name='logged_in_users'),\n]",
         "detail": "signup_login.urls",
         "documentation": {}
     },
@@ -822,6 +862,15 @@
         "importPath": "signup_login.views",
         "description": "signup_login.views",
         "peekOfCode": "class UserLoginApiView(APIView):\n    def post(self, request):\n        serializer = UserLoginSerializers(data=request.data)\n        if serializer.is_valid():\n            email = serializer.validated_data['email']\n            password = serializer.validated_data['password']\n            user = authenticate(request, email=email, password=password)\n            if user is not None:\n                refresh = RefreshToken.for_user(user)\n                login(request, user)",
+        "detail": "signup_login.views",
+        "documentation": {}
+    },
+    {
+        "label": "get_registered_and_logged_in_users",
+        "kind": 2,
+        "importPath": "signup_login.views",
+        "description": "signup_login.views",
+        "peekOfCode": "def get_registered_and_logged_in_users(request):\n    search_query = request.GET.get('search', '')\n    users = User.objects.filter(\n        last_login__isnull=False).exclude(is_superuser=True)\n    if search_query:\n        search_terms = search_query.split()\n        if len(search_terms) == 1:\n            users = users.filter(\n                models.Q(username__icontains=search_query) |\n                models.Q(email__icontains=search_query) |",
         "detail": "signup_login.views",
         "documentation": {}
     },
