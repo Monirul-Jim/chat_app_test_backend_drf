@@ -1,14 +1,14 @@
 from rest_framework import status, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from signup_login.models import Message
-from .serializers import MessageSerializer, UserLoginSerializers, UserRegistrationSerializers
+from .serializers import UserLoginSerializers, UserRegistrationSerializers
 from django.contrib.auth import authenticate, login, logout
 # from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
 from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.tokens import RefreshToken
+from django.contrib.auth.models import User
 
 
 class UserRegistrationView(APIView):
@@ -41,7 +41,6 @@ class UserLoginApiView(APIView):
             if user is not None:
                 refresh = RefreshToken.for_user(user)
 
-                # Login user session
                 login(request, user)
 
                 response = Response({
@@ -52,7 +51,6 @@ class UserLoginApiView(APIView):
                     'email': user.email
                 }, status=status.HTTP_200_OK)
 
-                # Set refresh token as HttpOnly cookie
                 response.set_cookie(
                     'refresh', str(refresh),
                     httponly=True,
@@ -64,8 +62,3 @@ class UserLoginApiView(APIView):
             else:
                 return Response({'error': 'Invalid Credentials'}, status=status.HTTP_401_UNAUTHORIZED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-class MessageViewSet(viewsets.ModelViewSet):
-    queryset = Message.objects.all()
-    serializer_class = MessageSerializer

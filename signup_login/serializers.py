@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from signup_login.models import Message
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 
@@ -36,21 +35,6 @@ class UserRegistrationSerializers(serializers.ModelSerializer):
         return account
 
 
-# class UserLoginSerializers(serializers.Serializer):
-#     email = serializers.CharField(required=True)
-#     password = serializers.CharField(required=True)
-
-
-# class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
-#     @classmethod
-#     def get_token(cls, user):
-#         token = super().get_token(user)
-#         # Add custom claims
-#         token['user_id'] = user.id
-
-#         return token
-
-
 class UserLoginSerializers(serializers.Serializer):
     email = serializers.CharField(required=True)
     password = serializers.CharField(required=True)
@@ -58,10 +42,3 @@ class UserLoginSerializers(serializers.Serializer):
     class Meta:
         model = User
         fields = ['email', 'password']
-
-
-class MessageSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Message
-        fields = ['id', 'room', 'sender', 'content', 'image',
-                  'document', 'video', 'audio', 'timestamp']

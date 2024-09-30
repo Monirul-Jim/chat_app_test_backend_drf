@@ -154,6 +154,46 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -167,6 +207,14 @@
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "ChatMessage",
+        "importPath": "signup_login.models",
+        "description": "signup_login.models",
+        "isExtraImport": true,
+        "detail": "signup_login.models",
         "documentation": {}
     },
     {
@@ -259,30 +307,6 @@
         "documentation": {}
     },
     {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
         "label": "serializers",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -307,19 +331,27 @@
         "documentation": {}
     },
     {
-        "label": "Message",
-        "importPath": "signup_login.models",
-        "description": "signup_login.models",
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
         "isExtraImport": true,
-        "detail": "signup_login.models",
+        "detail": "django.contrib.auth.models",
         "documentation": {}
     },
     {
-        "label": "Message",
-        "importPath": "signup_login.models",
-        "description": "signup_login.models",
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
         "isExtraImport": true,
-        "detail": "signup_login.models",
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
         "documentation": {}
     },
     {
@@ -609,7 +641,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = 'static/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSTATICFILES_DIRS = [\n    BASE_DIR/'static'\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -618,7 +650,16 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSTATICFILES_DIRS = [\n    BASE_DIR/'static'\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "chat_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "chat_app.settings",
+        "description": "chat_app.settings",
+        "peekOfCode": "STATICFILES_DIRS = [\n    BASE_DIR/'static'\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -636,7 +677,7 @@
         "kind": 5,
         "importPath": "chat_app.urls",
         "description": "chat_app.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('user/', include('signup_login.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('user/', include('signup_login.urls')),\n]\n# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "chat_app.urls",
         "documentation": {}
     },
@@ -656,6 +697,33 @@
         "description": "signup_login.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='ChatRoom',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
         "detail": "signup_login.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "signup_login.migrations.0002_remove_message_room_remove_message_audio_and_more",
+        "description": "signup_login.migrations.0002_remove_message_room_remove_message_audio_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('signup_login', '0001_initial'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='message',\n            name='room',\n        ),\n        migrations.RemoveField(",
+        "detail": "signup_login.migrations.0002_remove_message_room_remove_message_audio_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "signup_login.migrations.0003_alter_message_file_alter_message_message_type",
+        "description": "signup_login.migrations.0003_alter_message_file_alter_message_message_type",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('signup_login', '0002_remove_message_room_remove_message_audio_and_more'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='message',\n            name='file',\n            field=models.FileField(blank=True, null=True, upload_to='static/uploads/'),\n        ),",
+        "detail": "signup_login.migrations.0003_alter_message_file_alter_message_message_type",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "signup_login.migrations.0004_chatmessage_delete_message",
+        "description": "signup_login.migrations.0004_chatmessage_delete_message",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('signup_login', '0003_alter_message_file_alter_message_message_type'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='ChatMessage',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('sender', models.CharField(max_length=255)),",
+        "detail": "signup_login.migrations.0004_chatmessage_delete_message",
         "documentation": {}
     },
     {
@@ -681,25 +749,16 @@
         "kind": 6,
         "importPath": "signup_login.consumers",
         "description": "signup_login.consumers",
-        "peekOfCode": "class ChatConsumer(WebsocketConsumer):\n    def connect(self):\n        self.room_group_name = 'test'\n        async_to_sync(self.channel_layer.group_add)(\n            self.room_group_name,\n            self.channel_name\n        )\n        self.accept()\n    def receive(self, text_data):\n        text_data_json = json.loads(text_data)",
+        "peekOfCode": "class ChatConsumer(WebsocketConsumer):\n    def connect(self):\n        self.room_group_name = 'test'\n        async_to_sync(self.channel_layer.group_add)(\n            self.room_group_name,\n            self.channel_name\n        )\n        self.accept()\n        self.send_existing_messages()\n    def send_existing_messages(self):",
         "detail": "signup_login.consumers",
         "documentation": {}
     },
     {
-        "label": "ChatRoom",
+        "label": "ChatMessage",
         "kind": 6,
         "importPath": "signup_login.models",
         "description": "signup_login.models",
-        "peekOfCode": "class ChatRoom(models.Model):\n    name = models.CharField(max_length=100)\n    participants = models.ManyToManyField(User, related_name=\"chat_rooms\")\n    def __str__(self):\n        return self.name\nclass Message(models.Model):\n    room = models.ForeignKey(\n        ChatRoom, on_delete=models.CASCADE, related_name='messages')\n    sender = models.ForeignKey(User, on_delete=models.CASCADE)\n    content = models.TextField(blank=True, null=True)",
-        "detail": "signup_login.models",
-        "documentation": {}
-    },
-    {
-        "label": "Message",
-        "kind": 6,
-        "importPath": "signup_login.models",
-        "description": "signup_login.models",
-        "peekOfCode": "class Message(models.Model):\n    room = models.ForeignKey(\n        ChatRoom, on_delete=models.CASCADE, related_name='messages')\n    sender = models.ForeignKey(User, on_delete=models.CASCADE)\n    content = models.TextField(blank=True, null=True)\n    timestamp = models.DateTimeField(auto_now_add=True)\n    # File uploads\n    image = models.ImageField(upload_to='images/', blank=True, null=True)\n    document = models.FileField(upload_to='documents/', blank=True, null=True)\n    video = models.FileField(upload_to='videos/', blank=True, null=True)",
+        "peekOfCode": "class ChatMessage(models.Model):\n    sender = models.CharField(max_length=255)\n    message = models.TextField()\n    timestamp = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"{self.sender}: {self.message} at {self.timestamp}\"",
         "detail": "signup_login.models",
         "documentation": {}
     },
@@ -726,16 +785,7 @@
         "kind": 6,
         "importPath": "signup_login.serializers",
         "description": "signup_login.serializers",
-        "peekOfCode": "class UserLoginSerializers(serializers.Serializer):\n    email = serializers.CharField(required=True)\n    password = serializers.CharField(required=True)\n    class Meta:\n        model = User\n        fields = ['email', 'password']\nclass MessageSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Message\n        fields = ['id', 'room', 'sender', 'content', 'image',",
-        "detail": "signup_login.serializers",
-        "documentation": {}
-    },
-    {
-        "label": "MessageSerializer",
-        "kind": 6,
-        "importPath": "signup_login.serializers",
-        "description": "signup_login.serializers",
-        "peekOfCode": "class MessageSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Message\n        fields = ['id', 'room', 'sender', 'content', 'image',\n                  'document', 'video', 'audio', 'timestamp']",
+        "peekOfCode": "class UserLoginSerializers(serializers.Serializer):\n    email = serializers.CharField(required=True)\n    password = serializers.CharField(required=True)\n    class Meta:\n        model = User\n        fields = ['email', 'password']",
         "detail": "signup_login.serializers",
         "documentation": {}
     },
@@ -744,7 +794,7 @@
         "kind": 5,
         "importPath": "signup_login.urls",
         "description": "signup_login.urls",
-        "peekOfCode": "urlpatterns = [\n    path('register/', UserRegistrationView.as_view(), name='user_register'),\n    path('login/', UserLoginApiView.as_view(), name='user_login'),\n    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('register/', UserRegistrationView.as_view(), name='user_register'),\n    path('login/', UserLoginApiView.as_view(), name='user_login'),\n    path('refresh/', TokenRefreshView.as_view(), name='token_refresh')\n]",
         "detail": "signup_login.urls",
         "documentation": {}
     },
@@ -771,16 +821,7 @@
         "kind": 6,
         "importPath": "signup_login.views",
         "description": "signup_login.views",
-        "peekOfCode": "class UserLoginApiView(APIView):\n    def post(self, request):\n        serializer = UserLoginSerializers(data=request.data)\n        if serializer.is_valid():\n            email = serializer.validated_data['email']\n            password = serializer.validated_data['password']\n            user = authenticate(request, email=email, password=password)\n            if user is not None:\n                refresh = RefreshToken.for_user(user)\n                # Login user session",
-        "detail": "signup_login.views",
-        "documentation": {}
-    },
-    {
-        "label": "MessageViewSet",
-        "kind": 6,
-        "importPath": "signup_login.views",
-        "description": "signup_login.views",
-        "peekOfCode": "class MessageViewSet(viewsets.ModelViewSet):\n    queryset = Message.objects.all()\n    serializer_class = MessageSerializer",
+        "peekOfCode": "class UserLoginApiView(APIView):\n    def post(self, request):\n        serializer = UserLoginSerializers(data=request.data)\n        if serializer.is_valid():\n            email = serializer.validated_data['email']\n            password = serializer.validated_data['password']\n            user = authenticate(request, email=email, password=password)\n            if user is not None:\n                refresh = RefreshToken.for_user(user)\n                login(request, user)",
         "detail": "signup_login.views",
         "documentation": {}
     },
