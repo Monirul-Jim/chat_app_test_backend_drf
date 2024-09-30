@@ -160,7 +160,8 @@ CORS_ALLOW_HEADERS = [
     'refresh'
 ]
 
-CSRF_TRUSTED_ORIGINS = ["http://localhost:5173"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:8000"]
+CSRF_COOKIE_SECURE = False
 
 # Allow specific HTTP methods if necessary
 CORS_ALLOW_METHODS = [

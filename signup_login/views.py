@@ -1,9 +1,9 @@
 from rest_framework import status, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import UserLoginSerializers, UserRegistrationSerializers
+from signup_login.models import AddedUser
+from .serializers import AddedUserSerializer, UserLoginSerializers, UserRegistrationSerializers
 from django.contrib.auth import authenticate, login, logout
-# from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
 from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth import get_user_model
@@ -13,6 +13,8 @@ from django.contrib.sessions.models import Session
 from django.utils import timezone
 from django.http import JsonResponse
 from django.db import models
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 
 
 class UserRegistrationView(APIView):
@@ -132,3 +134,21 @@ def get_registered_and_logged_in_users(request):
     ]
 
     return JsonResponse(users_data, safe=False)
+
+
+def add_user(request):
+    if request.method == 'POST':
+        serializer = AddedUserSerializer(data=request.data)
+        if serializer.is_valid():
+            # Set the added_by field to the current user
+            serializer.save(added_by=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_added_users(request):
+    added_users = AddedUser.objects.all()
+    serializer = AddedUserSerializer(added_users, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)

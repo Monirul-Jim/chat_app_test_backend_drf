@@ -138,6 +138,30 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -219,6 +243,22 @@
     },
     {
         "label": "ChatMessage",
+        "importPath": "signup_login.models",
+        "description": "signup_login.models",
+        "isExtraImport": true,
+        "detail": "signup_login.models",
+        "documentation": {}
+    },
+    {
+        "label": "AddedUser",
+        "importPath": "signup_login.models",
+        "description": "signup_login.models",
+        "isExtraImport": true,
+        "detail": "signup_login.models",
+        "documentation": {}
+    },
+    {
+        "label": "AddedUser",
         "importPath": "signup_login.models",
         "description": "signup_login.models",
         "isExtraImport": true,
@@ -331,6 +371,38 @@
         "documentation": {}
     },
     {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
         "label": "serializers",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -352,30 +424,6 @@
         "description": "rest_framework",
         "isExtraImport": true,
         "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
         "documentation": {}
     },
     {
@@ -440,6 +488,30 @@
         "description": "django.http",
         "isExtraImport": true,
         "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "permission_classes",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "IsAuthenticated",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
         "documentation": {}
     },
     {
@@ -636,7 +708,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n    'refresh'\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]\n# Allow specific HTTP methods if necessary",
+        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n    'refresh'\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://127.0.0.1:8000\"]\nCSRF_COOKIE_SECURE = False",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -645,7 +717,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n    'refresh'\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',",
+        "peekOfCode": "CORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n    'refresh'\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://127.0.0.1:8000\"]\nCSRF_COOKIE_SECURE = False\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -654,7 +726,16 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n    'PUT',\n    'DELETE',\n    'OPTIONS',\n]\nAUTHENTICATION_BACKENDS = [",
+        "peekOfCode": "CSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://127.0.0.1:8000\"]\nCSRF_COOKIE_SECURE = False\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n    'PUT',\n    'DELETE',\n    'OPTIONS',\n]",
+        "detail": "chat_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CSRF_COOKIE_SECURE",
+        "kind": 5,
+        "importPath": "chat_app.settings",
+        "description": "chat_app.settings",
+        "peekOfCode": "CSRF_COOKIE_SECURE = False\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n    'PUT',\n    'DELETE',\n    'OPTIONS',\n]\nAUTHENTICATION_BACKENDS = [",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -767,6 +848,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "signup_login.migrations.0005_addeduser",
+        "description": "signup_login.migrations.0005_addeduser",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('signup_login', '0004_chatmessage_delete_message'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='AddedUser',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "signup_login.migrations.0005_addeduser",
+        "documentation": {}
+    },
+    {
         "label": "SignupLoginConfig",
         "kind": 6,
         "importPath": "signup_login.apps",
@@ -798,7 +888,16 @@
         "kind": 6,
         "importPath": "signup_login.models",
         "description": "signup_login.models",
-        "peekOfCode": "class ChatMessage(models.Model):\n    sender = models.CharField(max_length=255)\n    message = models.TextField()\n    timestamp = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"{self.sender}: {self.message} at {self.timestamp}\"",
+        "peekOfCode": "class ChatMessage(models.Model):\n    sender = models.CharField(max_length=255)\n    message = models.TextField()\n    timestamp = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"{self.sender}: {self.message} at {self.timestamp}\"\nclass AddedUser(models.Model):\n    username = models.CharField(max_length=150, unique=True)\n    first_name = models.CharField(max_length=30)\n    last_name = models.CharField(max_length=30)",
+        "detail": "signup_login.models",
+        "documentation": {}
+    },
+    {
+        "label": "AddedUser",
+        "kind": 6,
+        "importPath": "signup_login.models",
+        "description": "signup_login.models",
+        "peekOfCode": "class AddedUser(models.Model):\n    username = models.CharField(max_length=150, unique=True)\n    first_name = models.CharField(max_length=30)\n    last_name = models.CharField(max_length=30)\n    email = models.EmailField(unique=True)\n    added_by = models.ForeignKey(User, on_delete=models.CASCADE)\n    def __str__(self):\n        return self.username",
         "detail": "signup_login.models",
         "documentation": {}
     },
@@ -825,7 +924,16 @@
         "kind": 6,
         "importPath": "signup_login.serializers",
         "description": "signup_login.serializers",
-        "peekOfCode": "class UserLoginSerializers(serializers.Serializer):\n    email = serializers.CharField(required=True)\n    password = serializers.CharField(required=True)\n    class Meta:\n        model = User\n        fields = ['email', 'password']",
+        "peekOfCode": "class UserLoginSerializers(serializers.Serializer):\n    email = serializers.CharField(required=True)\n    password = serializers.CharField(required=True)\n    class Meta:\n        model = User\n        fields = ['email', 'password']\nclass AddedUserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = AddedUser\n        fields = ['username', 'first_name', 'last_name', 'email', 'added_by']",
+        "detail": "signup_login.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "AddedUserSerializer",
+        "kind": 6,
+        "importPath": "signup_login.serializers",
+        "description": "signup_login.serializers",
+        "peekOfCode": "class AddedUserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = AddedUser\n        fields = ['username', 'first_name', 'last_name', 'email', 'added_by']\n        read_only_fields = ['added_by']",
         "detail": "signup_login.serializers",
         "documentation": {}
     },
@@ -834,7 +942,7 @@
         "kind": 5,
         "importPath": "signup_login.urls",
         "description": "signup_login.urls",
-        "peekOfCode": "urlpatterns = [\n    path('register/', UserRegistrationView.as_view(), name='user_register'),\n    path('login/', UserLoginApiView.as_view(), name='user_login'),\n    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),\n    path('logged-in-users/', get_registered_and_logged_in_users,\n         name='logged_in_users'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('register/', UserRegistrationView.as_view(), name='user_register'),\n    path('login/', UserLoginApiView.as_view(), name='user_login'),\n    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),\n    path('logged-in-users/', get_registered_and_logged_in_users,\n         name='logged_in_users'),\n    path('add-user/', add_user, name='add_user'),\n    path('get-added-users/', get_added_users, name='get_added_users'),\n]",
         "detail": "signup_login.urls",
         "documentation": {}
     },
@@ -871,6 +979,24 @@
         "importPath": "signup_login.views",
         "description": "signup_login.views",
         "peekOfCode": "def get_registered_and_logged_in_users(request):\n    search_query = request.GET.get('search', '')\n    users = User.objects.filter(\n        last_login__isnull=False).exclude(is_superuser=True)\n    if search_query:\n        search_terms = search_query.split()\n        if len(search_terms) == 1:\n            users = users.filter(\n                models.Q(username__icontains=search_query) |\n                models.Q(email__icontains=search_query) |",
+        "detail": "signup_login.views",
+        "documentation": {}
+    },
+    {
+        "label": "add_user",
+        "kind": 2,
+        "importPath": "signup_login.views",
+        "description": "signup_login.views",
+        "peekOfCode": "def add_user(request):\n    if request.method == 'POST':\n        serializer = AddedUserSerializer(data=request.data)\n        if serializer.is_valid():\n            # Set the added_by field to the current user\n            serializer.save(added_by=request.user)\n            return Response(serializer.data, status=status.HTTP_201_CREATED)\n        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)\n@api_view(['GET'])\n@permission_classes([IsAuthenticated])",
+        "detail": "signup_login.views",
+        "documentation": {}
+    },
+    {
+        "label": "get_added_users",
+        "kind": 2,
+        "importPath": "signup_login.views",
+        "description": "signup_login.views",
+        "peekOfCode": "def get_added_users(request):\n    added_users = AddedUser.objects.all()\n    serializer = AddedUserSerializer(added_users, many=True)\n    return Response(serializer.data, status=status.HTTP_200_OK)",
         "detail": "signup_login.views",
         "documentation": {}
     },
