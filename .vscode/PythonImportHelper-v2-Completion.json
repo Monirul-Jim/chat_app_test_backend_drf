@@ -65,6 +65,14 @@
         "documentation": {}
     },
     {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -127,6 +135,14 @@
         "importPath": "django.db.models.deletion",
         "description": "django.db.models.deletion",
         "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -515,6 +531,14 @@
         "documentation": {}
     },
     {
+        "label": "csrf_exempt",
+        "importPath": "django.views.decorators.csrf",
+        "description": "django.views.decorators.csrf",
+        "isExtraImport": true,
+        "detail": "django.views.decorators.csrf",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -609,7 +633,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ),\n}\n# WSGI_APPLICATION = 'chat_app.wsgi.application'\nASGI_APPLICATION = 'chat_app.asgi.application'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels.layers.InMemoryChannelLayer',",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n        'rest_framework.authentication.SessionAuthentication',\n    ),\n}\n# WSGI_APPLICATION = 'chat_app.wsgi.application'\nASGI_APPLICATION = 'chat_app.asgi.application'\nCHANNEL_LAYERS = {\n    'default': {",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -654,7 +678,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),  # Set to 30 days\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -663,7 +687,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_COOKIE': 'refresh_token',",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),  # Set to 30 days\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -672,7 +696,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_COOKIE': 'refresh_token',\n    'AUTH_COOKIE_PATH': '/',  # Ensures the cookie is sent for all requests",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),  # Set to 30 days\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -681,7 +705,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "USE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_COOKIE': 'refresh_token',\n    'AUTH_COOKIE_PATH': '/',  # Ensures the cookie is sent for all requests\n    # Protect refresh token from being accessed by JavaScript",
+        "peekOfCode": "USE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),  # Set to 30 days\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_HEADER_TYPES': ('Bearer',),",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -690,7 +714,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "SIMPLE_JWT = {\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_COOKIE': 'refresh_token',\n    'AUTH_COOKIE_PATH': '/',  # Ensures the cookie is sent for all requests\n    # Protect refresh token from being accessed by JavaScript\n    'AUTH_COOKIE_HTTP_ONLY': True,\n    # Cross-site requests allowed (adjust if needed)",
+        "peekOfCode": "SIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),  # Set to 30 days\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_HEADER_TYPES': ('Bearer',),\n    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),\n    'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -699,7 +723,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n    'refresh'",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:5173\",\n]\nCORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',\n    'refresh'",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -708,7 +732,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n    'refresh'\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://127.0.0.1:8000\"]\nCSRF_COOKIE_SECURE = False",
+        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',\n    'refresh'\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://127.0.0.1:8000\"]\n# Allow specific HTTP methods if necessary",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -717,7 +741,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',  # Ensure CSRF header is allowed\n    'refresh'\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://127.0.0.1:8000\"]\nCSRF_COOKIE_SECURE = False\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [",
+        "peekOfCode": "CORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',\n    'refresh'\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://127.0.0.1:8000\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -726,16 +750,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://127.0.0.1:8000\"]\nCSRF_COOKIE_SECURE = False\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n    'PUT',\n    'DELETE',\n    'OPTIONS',\n]",
-        "detail": "chat_app.settings",
-        "documentation": {}
-    },
-    {
-        "label": "CSRF_COOKIE_SECURE",
-        "kind": 5,
-        "importPath": "chat_app.settings",
-        "description": "chat_app.settings",
-        "peekOfCode": "CSRF_COOKIE_SECURE = False\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n    'PUT',\n    'DELETE',\n    'OPTIONS',\n]\nAUTHENTICATION_BACKENDS = [",
+        "peekOfCode": "CSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://127.0.0.1:8000\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n    'PUT',\n    'DELETE',\n    'OPTIONS',\n]\nAUTHENTICATION_BACKENDS = [",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -762,7 +777,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSTATICFILES_DIRS = [\n    BASE_DIR/'static'\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = 'static/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# STATICFILES_DIRS = [\n#     BASE_DIR/'static'\n# ]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -771,16 +786,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nSTATICFILES_DIRS = [\n    BASE_DIR/'static'\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
-        "detail": "chat_app.settings",
-        "documentation": {}
-    },
-    {
-        "label": "STATICFILES_DIRS",
-        "kind": 5,
-        "importPath": "chat_app.settings",
-        "description": "chat_app.settings",
-        "peekOfCode": "STATICFILES_DIRS = [\n    BASE_DIR/'static'\n]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# STATICFILES_DIRS = [\n#     BASE_DIR/'static'\n# ]\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -942,7 +948,7 @@
         "kind": 5,
         "importPath": "signup_login.urls",
         "description": "signup_login.urls",
-        "peekOfCode": "urlpatterns = [\n    path('register/', UserRegistrationView.as_view(), name='user_register'),\n    path('login/', UserLoginApiView.as_view(), name='user_login'),\n    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),\n    path('logged-in-users/', get_registered_and_logged_in_users,\n         name='logged_in_users'),\n    path('add-user/', add_user, name='add_user'),\n    path('get-added-users/', get_added_users, name='get_added_users'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('register/', UserRegistrationView.as_view(), name='user_register'),\n    path('login/', UserLoginApiView.as_view(), name='user_login'),\n    path('logout/', UserLogoutApiView.as_view(), name='user_logout'),\n    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),\n    path('logged-in-users/', get_registered_and_logged_in_users,\n         name='logged_in_users'),\n    path('add-user/', add_user, name='add_user'),\n    path('get-added-users/', get_added_users, name='get_added_users'),\n]",
         "detail": "signup_login.urls",
         "documentation": {}
     },
@@ -969,7 +975,16 @@
         "kind": 6,
         "importPath": "signup_login.views",
         "description": "signup_login.views",
-        "peekOfCode": "class UserLoginApiView(APIView):\n    def post(self, request):\n        serializer = UserLoginSerializers(data=request.data)\n        if serializer.is_valid():\n            email = serializer.validated_data['email']\n            password = serializer.validated_data['password']\n            user = authenticate(request, email=email, password=password)\n            if user is not None:\n                refresh = RefreshToken.for_user(user)\n                login(request, user)",
+        "peekOfCode": "class UserLoginApiView(APIView):\n    def post(self, request):\n        serializer = UserLoginSerializers(data=request.data)\n        if serializer.is_valid():\n            email = serializer.validated_data['email']\n            password = serializer.validated_data['password']\n            user = authenticate(request, email=email, password=password)\n            if user is not None:\n                refresh = RefreshToken.for_user(user)\n                response = Response({",
+        "detail": "signup_login.views",
+        "documentation": {}
+    },
+    {
+        "label": "UserLogoutApiView",
+        "kind": 6,
+        "importPath": "signup_login.views",
+        "description": "signup_login.views",
+        "peekOfCode": "class UserLogoutApiView(APIView):\n    permission_classes = [IsAuthenticated]\n    def post(self, request):\n        logout(request)\n        response = Response(\n            {'message': 'User logged out successfully'}, status=status.HTTP_205_RESET_CONTENT)\n        response.delete_cookie('refresh')\n        return response\n# this is just for login user show\n# def get_logged_in_users(request):",
         "detail": "signup_login.views",
         "documentation": {}
     },
@@ -987,7 +1002,7 @@
         "kind": 2,
         "importPath": "signup_login.views",
         "description": "signup_login.views",
-        "peekOfCode": "def add_user(request):\n    if request.method == 'POST':\n        serializer = AddedUserSerializer(data=request.data)\n        if serializer.is_valid():\n            # Set the added_by field to the current user\n            serializer.save(added_by=request.user)\n            return Response(serializer.data, status=status.HTTP_201_CREATED)\n        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)\n@api_view(['GET'])\n@permission_classes([IsAuthenticated])",
+        "peekOfCode": "def add_user(request):\n    if not request.user.is_authenticated:\n        return JsonResponse({'error': 'Authentication required'}, status=401)\n    if request.method == 'POST':\n        serializer = AddedUserSerializer(data=request.data)\n        if serializer.is_valid():\n            serializer.save(added_by=request.user)\n            return Response(serializer.data, status=status.HTTP_201_CREATED)\n        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)\n@api_view(['GET'])",
         "detail": "signup_login.views",
         "documentation": {}
     },

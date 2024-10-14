@@ -15,6 +15,9 @@ from django.http import JsonResponse
 from django.db import models
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
+from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
+from datetime import timedelta
 
 
 class UserRegistrationView(APIView):
@@ -46,9 +49,6 @@ class UserLoginApiView(APIView):
             user = authenticate(request, email=email, password=password)
             if user is not None:
                 refresh = RefreshToken.for_user(user)
-
-                login(request, user)
-
                 response = Response({
                     'message': 'User logged in successfully',
                     'access': str(refresh.access_token),
@@ -58,16 +58,31 @@ class UserLoginApiView(APIView):
                 }, status=status.HTTP_200_OK)
 
                 response.set_cookie(
-                    'refresh', str(refresh),
+                    key=settings.SIMPLE_JWT['AUTH_COOKIE_REFRESH'],
+                    value=str(refresh),
+                    expires=timedelta(days=30),
+                    # expires=settings.SIMPLE_JWT['REFRESH_TOKEN_LIFETIME'],
                     httponly=True,
-                    # secure=False,
-                    # samesite='None',
-                    # samesite=None,
+                    # Ensure this is True in production
+                    secure=settings.SIMPLE_JWT['AUTH_COOKIE_SECURE'],
+                    samesite='Lax'  # Adjust based on your app’s requirements
                 )
                 return response
             else:
                 return Response({'error': 'Invalid Credentials'}, status=status.HTTP_401_UNAUTHORIZED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class UserLogoutApiView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        logout(request)
+        response = Response(
+            {'message': 'User logged out successfully'}, status=status.HTTP_205_RESET_CONTENT)
+        response.delete_cookie('refresh')
+        return response
+
 
 # this is just for login user show
 
@@ -136,11 +151,23 @@ def get_registered_and_logged_in_users(request):
     return JsonResponse(users_data, safe=False)
 
 
+@api_view(['POST'])
+@csrf_exempt
+# def add_user(request):
+#     if request.method == 'POST':
+#         serializer = AddedUserSerializer(
+#             data=request.data)  # Now 'data' will work
+#         if serializer.is_valid():
+#             serializer.save(added_by=request.user)
+#             return Response(serializer.data, status=status.HTTP_201_CREATED)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 def add_user(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'error': 'Authentication required'}, status=401)
+
     if request.method == 'POST':
         serializer = AddedUserSerializer(data=request.data)
         if serializer.is_valid():
-            # Set the added_by field to the current user
             serializer.save(added_by=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

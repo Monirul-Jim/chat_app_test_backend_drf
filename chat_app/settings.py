@@ -79,6 +79,7 @@ TEMPLATES = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ),
 }
 
@@ -132,22 +133,21 @@ USE_I18N = True
 USE_TZ = True
 # JWT Settings
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
+    'AUTH_COOKIE_REFRESH': 'refresh_token',
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),  # Set to 30 days
+    'AUTH_COOKIE_EXPIRES': timedelta(days=30),
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
-    'AUTH_COOKIE': 'refresh_token',
-    'AUTH_COOKIE_PATH': '/',  # Ensures the cookie is sent for all requests
-    # Protect refresh token from being accessed by JavaScript
-    'AUTH_COOKIE_HTTP_ONLY': True,
-    # Cross-site requests allowed (adjust if needed)
-    'AUTH_COOKIE_SAMESITE': None,
-    'AUTH_COOKIE_SECURE': False,
-    'SIGNING_KEY': SECRET_KEY,
     'AUTH_HEADER_TYPES': ('Bearer',),
-    'USER_ID_CLAIM': 'user_id',
-    # 'TOKEN_OBTAIN_SERIALIZER': 'signup_login.serializers.to.CustomTokenObtainPairSerializer',
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
+    # Set to True in production (only allow cookies over HTTPS)
+    'AUTH_COOKIE_SECURE': False,
+    'AUTH_COOKIE_HTTPONLY': True,  # Ensure cookies are not accessible to JavaScript
 }
+
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
@@ -156,12 +156,10 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = [
     'content-type',
     'authorization',
-    'x-csrftoken',  # Ensure CSRF header is allowed
+    'x-csrftoken',
     'refresh'
 ]
-
 CSRF_TRUSTED_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:8000"]
-CSRF_COOKIE_SECURE = False
 
 # Allow specific HTTP methods if necessary
 CORS_ALLOW_METHODS = [
@@ -184,9 +182,9 @@ AUTHENTICATION_BACKENDS = [
 
 STATIC_URL = 'static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATICFILES_DIRS = [
-    BASE_DIR/'static'
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR/'static'
+# ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
