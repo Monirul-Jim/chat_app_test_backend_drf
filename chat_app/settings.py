@@ -76,12 +76,12 @@ TEMPLATES = [
         },
     },
 ]
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ),
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
+#         'rest_framework.authentication.SessionAuthentication',
+#     ),
+# }
 
 
 # WSGI_APPLICATION = 'chat_app.wsgi.application'
@@ -159,7 +159,7 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'refresh'
 ]
-CSRF_TRUSTED_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:8000"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:5173", "http://localhost:8000"]
 
 # Allow specific HTTP methods if necessary
 CORS_ALLOW_METHODS = [

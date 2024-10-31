@@ -539,6 +539,14 @@
         "documentation": {}
     },
     {
+        "label": "get_token",
+        "importPath": "django.middleware.csrf",
+        "description": "django.middleware.csrf",
+        "isExtraImport": true,
+        "detail": "django.middleware.csrf",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -625,15 +633,6 @@
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
         "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
-        "detail": "chat_app.settings",
-        "documentation": {}
-    },
-    {
-        "label": "REST_FRAMEWORK",
-        "kind": 5,
-        "importPath": "chat_app.settings",
-        "description": "chat_app.settings",
-        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n        'rest_framework.authentication.SessionAuthentication',\n    ),\n}\n# WSGI_APPLICATION = 'chat_app.wsgi.application'\nASGI_APPLICATION = 'chat_app.asgi.application'\nCHANNEL_LAYERS = {\n    'default': {",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -732,7 +731,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',\n    'refresh'\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://127.0.0.1:8000\"]\n# Allow specific HTTP methods if necessary",
+        "peekOfCode": "CORS_ALLOW_CREDENTIALS = True\n# Allow specific headers if necessary\nCORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',\n    'refresh'\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://localhost:8000\"]\n# Allow specific HTTP methods if necessary",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -741,7 +740,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',\n    'refresh'\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://127.0.0.1:8000\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',",
+        "peekOfCode": "CORS_ALLOW_HEADERS = [\n    'content-type',\n    'authorization',\n    'x-csrftoken',\n    'refresh'\n]\nCSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://localhost:8000\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -750,7 +749,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "CSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://127.0.0.1:8000\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n    'PUT',\n    'DELETE',\n    'OPTIONS',\n]\nAUTHENTICATION_BACKENDS = [",
+        "peekOfCode": "CSRF_TRUSTED_ORIGINS = [\"http://localhost:5173\", \"http://localhost:8000\"]\n# Allow specific HTTP methods if necessary\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n    'PUT',\n    'DELETE',\n    'OPTIONS',\n]\nAUTHENTICATION_BACKENDS = [",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -930,7 +929,16 @@
         "kind": 6,
         "importPath": "signup_login.serializers",
         "description": "signup_login.serializers",
-        "peekOfCode": "class UserLoginSerializers(serializers.Serializer):\n    email = serializers.CharField(required=True)\n    password = serializers.CharField(required=True)\n    class Meta:\n        model = User\n        fields = ['email', 'password']\nclass AddedUserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = AddedUser\n        fields = ['username', 'first_name', 'last_name', 'email', 'added_by']",
+        "peekOfCode": "class UserLoginSerializers(serializers.Serializer):\n    email = serializers.CharField(required=True)\n    password = serializers.CharField(required=True)\n    class Meta:\n        model = User\n        fields = ['email', 'password']\nclass UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ['id', 'username', 'first_name', 'last_name']",
+        "detail": "signup_login.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "UserSerializer",
+        "kind": 6,
+        "importPath": "signup_login.serializers",
+        "description": "signup_login.serializers",
+        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ['id', 'username', 'first_name', 'last_name']\nclass AddedUserSerializer(serializers.ModelSerializer):\n    added_by = UserSerializer(read_only=True)\n    class Meta:\n        model = AddedUser\n        fields = ['username', 'first_name', 'last_name', 'email', 'added_by']\n        read_only_fields = ['added_by']",
         "detail": "signup_login.serializers",
         "documentation": {}
     },
@@ -939,7 +947,7 @@
         "kind": 6,
         "importPath": "signup_login.serializers",
         "description": "signup_login.serializers",
-        "peekOfCode": "class AddedUserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = AddedUser\n        fields = ['username', 'first_name', 'last_name', 'email', 'added_by']\n        read_only_fields = ['added_by']",
+        "peekOfCode": "class AddedUserSerializer(serializers.ModelSerializer):\n    added_by = UserSerializer(read_only=True)\n    class Meta:\n        model = AddedUser\n        fields = ['username', 'first_name', 'last_name', 'email', 'added_by']\n        read_only_fields = ['added_by']",
         "detail": "signup_login.serializers",
         "documentation": {}
     },
@@ -948,7 +956,7 @@
         "kind": 5,
         "importPath": "signup_login.urls",
         "description": "signup_login.urls",
-        "peekOfCode": "urlpatterns = [\n    path('register/', UserRegistrationView.as_view(), name='user_register'),\n    path('login/', UserLoginApiView.as_view(), name='user_login'),\n    path('logout/', UserLogoutApiView.as_view(), name='user_logout'),\n    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),\n    path('logged-in-users/', get_registered_and_logged_in_users,\n         name='logged_in_users'),\n    path('add-user/', add_user, name='add_user'),\n    path('get-added-users/', get_added_users, name='get_added_users'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('register/', UserRegistrationView.as_view(), name='user_register'),\n    path('login/', UserLoginApiView.as_view(), name='user_login'),\n    path('logout/', UserLogoutApiView.as_view(), name='user_logout'),\n    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),\n    path('logged-in-users/', get_registered_and_logged_in_users,\n         name='logged_in_users'),\n    path('add-user/', AddUserView.as_view(), name='add_user'),\n    path('get-added-users/', get_added_users, name='get_added_users'),\n]",
         "detail": "signup_login.urls",
         "documentation": {}
     },
@@ -966,7 +974,7 @@
         "kind": 6,
         "importPath": "signup_login.views",
         "description": "signup_login.views",
-        "peekOfCode": "class EmailBackend(ModelBackend):\n    def authenticate(self, request, email=None, password=None, **kwargs):\n        UserModel = get_user_model()\n        try:\n            user = UserModel.objects.get(email=email)\n            if user.check_password(password):\n                return user\n        except UserModel.DoesNotExist:\n            return None\nclass UserLoginApiView(APIView):",
+        "peekOfCode": "class EmailBackend(ModelBackend):\n    def authenticate(self, request, email=None, password=None, **kwargs):\n        UserModel = get_user_model()\n        try:\n            user = UserModel.objects.get(email=email)\n            if user.check_password(password):\n                return user\n        except UserModel.DoesNotExist:\n            return None\n# class UserLoginApiView(APIView):",
         "detail": "signup_login.views",
         "documentation": {}
     },
@@ -989,20 +997,20 @@
         "documentation": {}
     },
     {
+        "label": "AddUserView",
+        "kind": 6,
+        "importPath": "signup_login.views",
+        "description": "signup_login.views",
+        "peekOfCode": "class AddUserView(APIView):\n    permission_classes = [IsAuthenticated]\n    def post(self, request):\n        serializer = AddedUserSerializer(data=request.data)\n        if serializer.is_valid():\n            serializer.save(added_by=request.user)\n            return Response(serializer.data, status=status.HTTP_201_CREATED)\n        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)\n@api_view(['GET'])\n@permission_classes([IsAuthenticated])",
+        "detail": "signup_login.views",
+        "documentation": {}
+    },
+    {
         "label": "get_registered_and_logged_in_users",
         "kind": 2,
         "importPath": "signup_login.views",
         "description": "signup_login.views",
         "peekOfCode": "def get_registered_and_logged_in_users(request):\n    search_query = request.GET.get('search', '')\n    users = User.objects.filter(\n        last_login__isnull=False).exclude(is_superuser=True)\n    if search_query:\n        search_terms = search_query.split()\n        if len(search_terms) == 1:\n            users = users.filter(\n                models.Q(username__icontains=search_query) |\n                models.Q(email__icontains=search_query) |",
-        "detail": "signup_login.views",
-        "documentation": {}
-    },
-    {
-        "label": "add_user",
-        "kind": 2,
-        "importPath": "signup_login.views",
-        "description": "signup_login.views",
-        "peekOfCode": "def add_user(request):\n    if not request.user.is_authenticated:\n        return JsonResponse({'error': 'Authentication required'}, status=401)\n    if request.method == 'POST':\n        serializer = AddedUserSerializer(data=request.data)\n        if serializer.is_valid():\n            serializer.save(added_by=request.user)\n            return Response(serializer.data, status=status.HTTP_201_CREATED)\n        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)\n@api_view(['GET'])",
         "detail": "signup_login.views",
         "documentation": {}
     },

@@ -45,7 +45,15 @@ class UserLoginSerializers(serializers.Serializer):
         fields = ['email', 'password']
 
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'first_name', 'last_name']
+
+
 class AddedUserSerializer(serializers.ModelSerializer):
+    added_by = UserSerializer(read_only=True)
+
     class Meta:
         model = AddedUser
         fields = ['username', 'first_name', 'last_name', 'email', 'added_by']
