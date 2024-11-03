@@ -451,6 +451,14 @@
         "documentation": {}
     },
     {
+        "label": "ValidationError",
+        "importPath": "django.core.exceptions",
+        "description": "django.core.exceptions",
+        "isExtraImport": true,
+        "detail": "django.core.exceptions",
+        "documentation": {}
+    },
+    {
         "label": "TestCase",
         "importPath": "django.test",
         "description": "django.test",
@@ -633,6 +641,15 @@
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
         "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "chat_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "REST_FRAMEWORK",
+        "kind": 5,
+        "importPath": "chat_app.settings",
+        "description": "chat_app.settings",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ),\n}\n# WSGI_APPLICATION = 'chat_app.wsgi.application'\nASGI_APPLICATION = 'chat_app.asgi.application'\nCHANNEL_LAYERS = {\n    'default': {\n        'BACKEND': 'channels.layers.InMemoryChannelLayer',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -938,7 +955,7 @@
         "kind": 6,
         "importPath": "signup_login.serializers",
         "description": "signup_login.serializers",
-        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ['id', 'username', 'first_name', 'last_name']\nclass AddedUserSerializer(serializers.ModelSerializer):\n    added_by = UserSerializer(read_only=True)\n    class Meta:\n        model = AddedUser\n        fields = ['username', 'first_name', 'last_name', 'email', 'added_by']\n        read_only_fields = ['added_by']",
+        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ['id', 'username', 'first_name', 'last_name']\nclass AddedUserSerializer(serializers.ModelSerializer):\n    added_by = UserSerializer(read_only=True)\n    class Meta:\n        model = AddedUser\n        fields = ['username', 'first_name', 'last_name', 'email', 'added_by']\n    #     # read_only_fields = ['added_by']",
         "detail": "signup_login.serializers",
         "documentation": {}
     },
@@ -947,7 +964,7 @@
         "kind": 6,
         "importPath": "signup_login.serializers",
         "description": "signup_login.serializers",
-        "peekOfCode": "class AddedUserSerializer(serializers.ModelSerializer):\n    added_by = UserSerializer(read_only=True)\n    class Meta:\n        model = AddedUser\n        fields = ['username', 'first_name', 'last_name', 'email', 'added_by']\n        read_only_fields = ['added_by']",
+        "peekOfCode": "class AddedUserSerializer(serializers.ModelSerializer):\n    added_by = UserSerializer(read_only=True)\n    class Meta:\n        model = AddedUser\n        fields = ['username', 'first_name', 'last_name', 'email', 'added_by']\n    #     # read_only_fields = ['added_by']",
         "detail": "signup_login.serializers",
         "documentation": {}
     },
@@ -956,7 +973,7 @@
         "kind": 5,
         "importPath": "signup_login.urls",
         "description": "signup_login.urls",
-        "peekOfCode": "urlpatterns = [\n    path('register/', UserRegistrationView.as_view(), name='user_register'),\n    path('login/', UserLoginApiView.as_view(), name='user_login'),\n    path('logout/', UserLogoutApiView.as_view(), name='user_logout'),\n    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),\n    path('logged-in-users/', get_registered_and_logged_in_users,\n         name='logged_in_users'),\n    path('add-user/', AddUserView.as_view(), name='add_user'),\n    path('get-added-users/', get_added_users, name='get_added_users'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('register/', UserRegistrationView.as_view(), name='user_register'),\n    path('login/', UserLoginApiView.as_view(), name='user_login'),\n    path('logout/', UserLogoutApiView.as_view(), name='user_logout'),\n    path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),\n    path('logged-in-users/', get_registered_and_logged_in_users,\n         name='logged_in_users'),\n    path('add-user/', AddUserView.as_view(), name='add_user'),\n    path('get-added-users/', AddedUserListView.as_view(), name='get_added_users'),\n]",
         "detail": "signup_login.urls",
         "documentation": {}
     },
@@ -1001,7 +1018,16 @@
         "kind": 6,
         "importPath": "signup_login.views",
         "description": "signup_login.views",
-        "peekOfCode": "class AddUserView(APIView):\n    permission_classes = [IsAuthenticated]\n    def post(self, request):\n        serializer = AddedUserSerializer(data=request.data)\n        if serializer.is_valid():\n            serializer.save(added_by=request.user)\n            return Response(serializer.data, status=status.HTTP_201_CREATED)\n        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)\n@api_view(['GET'])\n@permission_classes([IsAuthenticated])",
+        "peekOfCode": "class AddUserView(APIView):\n    def post(self, request):\n        data = request.data\n        added_by_id = data.get('added_by')\n        try:\n            added_by_user = User.objects.get(id=added_by_id)\n        except User.DoesNotExist:\n            return Response({'error': 'Invalid added_by user ID'}, status=status.HTTP_400_BAD_REQUEST)\n        serializer = AddedUserSerializer(data=data)\n        if serializer.is_valid():",
+        "detail": "signup_login.views",
+        "documentation": {}
+    },
+    {
+        "label": "AddedUserListView",
+        "kind": 6,
+        "importPath": "signup_login.views",
+        "description": "signup_login.views",
+        "peekOfCode": "class AddedUserListView(APIView):\n    permission_classes = [IsAuthenticated]\n    def get(self, request):\n        if request.user.is_authenticated:\n            added_users = AddedUser.objects.filter(added_by=request.user)\n            serializer = AddedUserSerializer(added_users, many=True)\n            return Response(serializer.data, status=status.HTTP_200_OK)\n        else:\n            return Response({'error': 'Authentication required.'}, status=status.HTTP_403_FORBIDDEN)",
         "detail": "signup_login.views",
         "documentation": {}
     },
@@ -1011,15 +1037,6 @@
         "importPath": "signup_login.views",
         "description": "signup_login.views",
         "peekOfCode": "def get_registered_and_logged_in_users(request):\n    search_query = request.GET.get('search', '')\n    users = User.objects.filter(\n        last_login__isnull=False).exclude(is_superuser=True)\n    if search_query:\n        search_terms = search_query.split()\n        if len(search_terms) == 1:\n            users = users.filter(\n                models.Q(username__icontains=search_query) |\n                models.Q(email__icontains=search_query) |",
-        "detail": "signup_login.views",
-        "documentation": {}
-    },
-    {
-        "label": "get_added_users",
-        "kind": 2,
-        "importPath": "signup_login.views",
-        "description": "signup_login.views",
-        "peekOfCode": "def get_added_users(request):\n    added_users = AddedUser.objects.all()\n    serializer = AddedUserSerializer(added_users, many=True)\n    return Response(serializer.data, status=status.HTTP_200_OK)",
         "detail": "signup_login.views",
         "documentation": {}
     },

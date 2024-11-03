@@ -203,19 +203,27 @@ def get_registered_and_logged_in_users(request):
 #             return Response(serializer.data, status=status.HTTP_201_CREATED)
 #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 class AddUserView(APIView):
-    permission_classes = [IsAuthenticated]
-
     def post(self, request):
-        serializer = AddedUserSerializer(data=request.data)
+        data = request.data
+        added_by_id = data.get('added_by')
+        try:
+            added_by_user = User.objects.get(id=added_by_id)
+        except User.DoesNotExist:
+            return Response({'error': 'Invalid added_by user ID'}, status=status.HTTP_400_BAD_REQUEST)
+        serializer = AddedUserSerializer(data=data)
         if serializer.is_valid():
-            serializer.save(added_by=request.user)
+            serializer.save(added_by=added_by_user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-def get_added_users(request):
-    added_users = AddedUser.objects.all()
-    serializer = AddedUserSerializer(added_users, many=True)
-    return Response(serializer.data, status=status.HTTP_200_OK)
+class AddedUserListView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        if request.user.is_authenticated:
+            added_users = AddedUser.objects.filter(added_by=request.user)
+            serializer = AddedUserSerializer(added_users, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response({'error': 'Authentication required.'}, status=status.HTTP_403_FORBIDDEN)

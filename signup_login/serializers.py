@@ -2,6 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from .models import AddedUser
+from django.core.exceptions import ValidationError
 
 
 class UserRegistrationSerializers(serializers.ModelSerializer):
@@ -57,4 +58,4 @@ class AddedUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = AddedUser
         fields = ['username', 'first_name', 'last_name', 'email', 'added_by']
-        read_only_fields = ['added_by']
+    #     # read_only_fields = ['added_by']
