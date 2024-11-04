@@ -194,26 +194,44 @@ def get_registered_and_logged_in_users(request):
     return JsonResponse(users_data, safe=False)
 
 
-# def add_user(request):
-#     if request.method == 'POST':
-#         serializer = AddedUserSerializer(
-#             data=request.data)  # Now 'data' will work
+# class AddUserView(APIView):
+#     def post(self, request):
+#         data = request.data
+#         added_by_id = data.get('added_by')
+#         try:
+#             added_by_user = User.objects.get(id=added_by_id)
+#         except User.DoesNotExist:
+#             return Response({'error': 'Invalid added_by user ID'}, status=status.HTTP_400_BAD_REQUEST)
+#         serializer = AddedUserSerializer(data=data)
 #         if serializer.is_valid():
-#             serializer.save(added_by=request.user)
+#             serializer.save(added_by=added_by_user)
 #             return Response(serializer.data, status=status.HTTP_201_CREATED)
 #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 class AddUserView(APIView):
     def post(self, request):
         data = request.data
         added_by_id = data.get('added_by')
+
+        # Find the user who is adding the new user
         try:
             added_by_user = User.objects.get(id=added_by_id)
         except User.DoesNotExist:
             return Response({'error': 'Invalid added_by user ID'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Check if the same added_by user has already added this email or username
+        email = data.get('email')
+        username = data.get('username')
+
+        if AddedUser.objects.filter(email=email, added_by=added_by_user).exists() or AddedUser.objects.filter(username=username, added_by=added_by_user).exists():
+            return Response({'error': 'You have already added this user.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Proceed with adding the user if the user is not already added by the same added_by user
         serializer = AddedUserSerializer(data=data)
         if serializer.is_valid():
             serializer.save(added_by=added_by_user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 

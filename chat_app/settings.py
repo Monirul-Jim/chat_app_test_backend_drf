@@ -133,17 +133,16 @@ USE_TZ = True
 # JWT Settings
 SIMPLE_JWT = {
     'AUTH_COOKIE_REFRESH': 'refresh_token',
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),  # Set to 30 days
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
     'AUTH_COOKIE_EXPIRES': timedelta(days=30),
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
     'AUTH_HEADER_TYPES': ('Bearer',),
     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
     'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
-    # Set to True in production (only allow cookies over HTTPS)
     'AUTH_COOKIE_SECURE': False,
-    'AUTH_COOKIE_HTTPONLY': True,  # Ensure cookies are not accessible to JavaScript
+    'AUTH_COOKIE_HTTPONLY': True,
 }
 
 

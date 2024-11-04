@@ -162,6 +162,70 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -694,7 +758,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),  # Set to 30 days\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -703,7 +767,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),  # Set to 30 days\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -712,7 +776,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),  # Set to 30 days\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -721,7 +785,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "USE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),  # Set to 30 days\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_HEADER_TYPES': ('Bearer',),",
+        "peekOfCode": "USE_TZ = True\n# JWT Settings\nSIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_HEADER_TYPES': ('Bearer',),",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -730,7 +794,7 @@
         "kind": 5,
         "importPath": "chat_app.settings",
         "description": "chat_app.settings",
-        "peekOfCode": "SIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),  # Set to 30 days\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_HEADER_TYPES': ('Bearer',),\n    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),\n    'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',",
+        "peekOfCode": "SIMPLE_JWT = {\n    'AUTH_COOKIE_REFRESH': 'refresh_token',\n    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),\n    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),\n    'AUTH_COOKIE_EXPIRES': timedelta(days=30),\n    'ROTATE_REFRESH_TOKENS': True,\n    'BLACKLIST_AFTER_ROTATION': True,\n    'AUTH_HEADER_TYPES': ('Bearer',),\n    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),\n    'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',",
         "detail": "chat_app.settings",
         "documentation": {}
     },
@@ -879,6 +943,33 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "signup_login.migrations.0006_remove_addeduser_added_by_useraddhistory",
+        "description": "signup_login.migrations.0006_remove_addeduser_added_by_useraddhistory",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('signup_login', '0005_addeduser'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='addeduser',\n            name='added_by',\n        ),",
+        "detail": "signup_login.migrations.0006_remove_addeduser_added_by_useraddhistory",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "signup_login.migrations.0007_addeduser_added_by_delete_useraddhistory",
+        "description": "signup_login.migrations.0007_addeduser_added_by_delete_useraddhistory",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('signup_login', '0006_remove_addeduser_added_by_useraddhistory'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='addeduser',\n            name='added_by',\n            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),",
+        "detail": "signup_login.migrations.0007_addeduser_added_by_delete_useraddhistory",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "signup_login.migrations.0008_alter_addeduser_email_alter_addeduser_username",
+        "description": "signup_login.migrations.0008_alter_addeduser_email_alter_addeduser_username",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('signup_login', '0007_addeduser_added_by_delete_useraddhistory'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='addeduser',\n            name='email',\n            field=models.EmailField(max_length=254),\n        ),",
+        "detail": "signup_login.migrations.0008_alter_addeduser_email_alter_addeduser_username",
+        "documentation": {}
+    },
+    {
         "label": "SignupLoginConfig",
         "kind": 6,
         "importPath": "signup_login.apps",
@@ -910,7 +1001,7 @@
         "kind": 6,
         "importPath": "signup_login.models",
         "description": "signup_login.models",
-        "peekOfCode": "class ChatMessage(models.Model):\n    sender = models.CharField(max_length=255)\n    message = models.TextField()\n    timestamp = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"{self.sender}: {self.message} at {self.timestamp}\"\nclass AddedUser(models.Model):\n    username = models.CharField(max_length=150, unique=True)\n    first_name = models.CharField(max_length=30)\n    last_name = models.CharField(max_length=30)",
+        "peekOfCode": "class ChatMessage(models.Model):\n    sender = models.CharField(max_length=255)\n    message = models.TextField()\n    timestamp = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"{self.sender}: {self.message} at {self.timestamp}\"\nclass AddedUser(models.Model):\n    username = models.CharField(max_length=150)\n    first_name = models.CharField(max_length=30)\n    last_name = models.CharField(max_length=30)",
         "detail": "signup_login.models",
         "documentation": {}
     },
@@ -919,7 +1010,7 @@
         "kind": 6,
         "importPath": "signup_login.models",
         "description": "signup_login.models",
-        "peekOfCode": "class AddedUser(models.Model):\n    username = models.CharField(max_length=150, unique=True)\n    first_name = models.CharField(max_length=30)\n    last_name = models.CharField(max_length=30)\n    email = models.EmailField(unique=True)\n    added_by = models.ForeignKey(User, on_delete=models.CASCADE)\n    def __str__(self):\n        return self.username",
+        "peekOfCode": "class AddedUser(models.Model):\n    username = models.CharField(max_length=150)\n    first_name = models.CharField(max_length=30)\n    last_name = models.CharField(max_length=30)\n    email = models.EmailField()\n    added_by = models.ForeignKey(\n        User, on_delete=models.CASCADE, blank=True, null=True)\n    def __str__(self):\n        return self.username",
         "detail": "signup_login.models",
         "documentation": {}
     },
@@ -1018,7 +1109,7 @@
         "kind": 6,
         "importPath": "signup_login.views",
         "description": "signup_login.views",
-        "peekOfCode": "class AddUserView(APIView):\n    def post(self, request):\n        data = request.data\n        added_by_id = data.get('added_by')\n        try:\n            added_by_user = User.objects.get(id=added_by_id)\n        except User.DoesNotExist:\n            return Response({'error': 'Invalid added_by user ID'}, status=status.HTTP_400_BAD_REQUEST)\n        serializer = AddedUserSerializer(data=data)\n        if serializer.is_valid():",
+        "peekOfCode": "class AddUserView(APIView):\n    def post(self, request):\n        data = request.data\n        added_by_id = data.get('added_by')\n        # Find the user who is adding the new user\n        try:\n            added_by_user = User.objects.get(id=added_by_id)\n        except User.DoesNotExist:\n            return Response({'error': 'Invalid added_by user ID'}, status=status.HTTP_400_BAD_REQUEST)\n        # Check if the same added_by user has already added this email or username",
         "detail": "signup_login.views",
         "documentation": {}
     },

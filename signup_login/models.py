@@ -12,11 +12,12 @@ class ChatMessage(models.Model):
 
 
 class AddedUser(models.Model):
-    username = models.CharField(max_length=150, unique=True)
+    username = models.CharField(max_length=150)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    email = models.EmailField(unique=True)
-    added_by = models.ForeignKey(User, on_delete=models.CASCADE)
+    email = models.EmailField()
+    added_by = models.ForeignKey(
+        User, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return self.username
